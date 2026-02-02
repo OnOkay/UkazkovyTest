@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15CC923C-515A-40CA-A688-415420F6DBD1}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{15CC923C-515A-40CA-A688-415420F6DBD1}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15CC923C-515A-40CA-A688-415420F6DBD1}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15CC923C-515A-40CA-A688-415420F6DBD1}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\view\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\view\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,23 +36,60 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "UkazkovyTest\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\MainWindow.xaml",
-              "RelativeToolTip": "UkazkovyTest\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "UkazkovyTest\\View\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\MainWindow.xaml",
+              "RelativeToolTip": "UkazkovyTest\\View\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-02T13:07:23.124Z",
+              "WhenOpened": "2026-02-02T15:11:07.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\Login.xaml",
+              "RelativeDocumentMoniker": "UkazkovyTest\\View\\Login.xaml",
+              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\Login.xaml",
+              "RelativeToolTip": "UkazkovyTest\\View\\Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-02T15:10:52.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\App.xaml",
+              "RelativeDocumentMoniker": "UkazkovyTest\\App.xaml",
+              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\App.xaml",
+              "RelativeToolTip": "UkazkovyTest\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-02T15:09:01.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "UkazkovyTest\\View\\Login.xaml.cs",
+              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\Login.xaml.cs",
+              "RelativeToolTip": "UkazkovyTest\\View\\Login.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T15:06:03.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "UkazkovyTest\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\MainWindow.xaml.cs",
-              "RelativeToolTip": "UkazkovyTest\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "UkazkovyTest\\View\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\MainWindow.xaml.cs",
+              "RelativeToolTip": "UkazkovyTest\\View\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T13:07:22.788Z",
               "EditorCaption": ""
