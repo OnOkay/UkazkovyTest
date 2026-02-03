@@ -22,5 +22,9 @@ namespace UkazkovyTest.View
             InitializeComponent();
         }
 
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UkazkovyTest.ViewModel;
 
 namespace UkazkovyTest
 {
@@ -19,6 +20,8 @@ namespace UkazkovyTest
         public MainWindow()
         {
             InitializeComponent();
+            MainWindowModel mainViewModel = new MainWindowModel();
+            this.DataContext = mainViewModel;
         }
         
     }

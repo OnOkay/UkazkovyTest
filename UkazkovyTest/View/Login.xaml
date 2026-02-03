@@ -12,7 +12,7 @@
         <Label Content="Please enter your username and password&#xD;&#xA;" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="118,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393" Grid.ColumnSpan="2"/>
         <Label Content="Password&#xA;" HorizontalAlignment="Left" Margin="117,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393" Grid.ColumnSpan="2"/>
-        <Button Name="LoginButton" Content="Log in" HorizontalAlignment="Left" Margin="200,173,0,0" VerticalAlignment="Top"/>
+        <Button Name="LoginButton" Content="Log in" HorizontalAlignment="Left" Margin="200,173,0,0" VerticalAlignment="Top" Click="LoginButton_Click"/>
         <Button Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="60,173,0,0" VerticalAlignment="Top"/>
 
     </Grid>

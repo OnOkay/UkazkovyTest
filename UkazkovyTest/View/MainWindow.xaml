@@ -10,13 +10,24 @@
         <Button Name="SendButton" Content="Button" HorizontalAlignment="Left" Margin="699,375,0,0" VerticalAlignment="Top" Height="28" Width="49"/>
         <TextBox Name="MessageBox" HorizontalAlignment="Left" Margin="262,375,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="432" Height="28"/>
 
-        <StackPanel Margin="21,38,580,19">
-            <Button Content="Button" RenderTransformOrigin="0.809,2.147"/>
+        <StackPanel Margin="21,38,580,291">
+            <Button Command="{Binding ShowWindowCommand}" Content="Button" RenderTransformOrigin="0.809,2.147"/>
         </StackPanel>
         <Label Content="Users" HorizontalAlignment="Left" Margin="98,7,0,0" VerticalAlignment="Top" Width="41"/>
-        <StackPanel Margin="262,77,41,76"/>
+        <StackPanel Margin="262,77,41,76">
+        </StackPanel>
         <Rectangle  HorizontalAlignment="Left" Height="34" Margin="262,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="497" Fill="#FFC82F2F"/>
         <Label Content="Uživatel&#xD;&#xA;" HorizontalAlignment="Left" Margin="492,42,0,0" VerticalAlignment="Top"/>
+        <ListView Name="UserList" ItemsSource="{Binding Users}" Margin="0,152,580,45">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding name}" Header="Name"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding surname}" Header="Surname"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
 
     </Grid>
 </Window>
