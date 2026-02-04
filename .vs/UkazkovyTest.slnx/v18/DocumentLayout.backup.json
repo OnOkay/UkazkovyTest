@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\model\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\model\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\viewmodel\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\viewmodel\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\view\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +23,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserManager.cs",
+              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Model\\UserManager.cs",
+              "RelativeDocumentMoniker": "UkazkovyTest\\Model\\UserManager.cs",
+              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Model\\UserManager.cs",
+              "RelativeToolTip": "UkazkovyTest\\Model\\UserManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T23:37:58.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Login.xaml",
               "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\Login.xaml",
               "RelativeDocumentMoniker": "UkazkovyTest\\View\\Login.xaml",
               "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\Login.xaml",
               "RelativeToolTip": "UkazkovyTest\\View\\Login.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-04T15:32:46.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\ViewModel\\LoginModel.cs",
-              "RelativeDocumentMoniker": "UkazkovyTest\\ViewModel\\LoginModel.cs",
-              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\ViewModel\\LoginModel.cs",
-              "RelativeToolTip": "UkazkovyTest\\ViewModel\\LoginModel.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T14:58:07.598Z",
+              "WhenOpened": "2026-02-04T22:08:39.347Z",
               "EditorCaption": ""
             }
           ]

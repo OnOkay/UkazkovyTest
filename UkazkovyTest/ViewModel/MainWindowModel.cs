@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Controls;
@@ -15,27 +16,73 @@ namespace UkazkovyTest.ViewModel
     internal class MainWindowModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
 
         public ObservableCollection<User> Users { get; set; }
+        public ObservableCollection<Message> Messages { get; set; }
 
-        public ICommand ShowWindowCommand { get; set; }
+        public ICommand SendMessageCommand { get; set; }
 
         public ICommand SetActiveUserCommand {  get; set; }
 
-        public String ActiveUser { get; set; }
+        public ICommand ChangeReceiverCommand {  get; set; }
 
-        public MainWindowModel() 
+
+        public User ActiveUser { get;}
+        
+        private string _SendContent;
+
+        public string SendContent
         {
-            Users = UserManager.GetUsers();
+            get => _SendContent;
+            set
+            {
+                if (_SendContent != value)
+                {
+                    _SendContent = value;
+                    OnPropertyChanged(nameof(SendContent));
+                    OnPropertyChanged(nameof(CanClickButton));
+                }
+            }
+        }
+        public bool CanClickButton => !string.IsNullOrEmpty(SendContent) || SendContent.Length > 255;
 
-            ShowWindowCommand = new RelayCommand(ShowWindow, CanShowWindow);
+
+        private User _ActiveReceiver;
+
+        public User ActiveReceiver
+        {
+            get => _ActiveReceiver;
+            set
+            {
+                _ActiveReceiver = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public MainWindowModel(User acitiveUser)
+        {
+            SendContent = "h";
+            Users = UserManager.GetUsers();
+            Messages = MessageManager.GetMessages();
+            ActiveUser = acitiveUser;
+            foreach (User user in Users)
+            {
+                if (user != ActiveUser)
+                {
+                    ActiveReceiver = user;
+                    break;
+                }
+            }
+
+            SendMessageCommand = new RelayCommand(SendMessage, CanSendMessage);
 
             SetActiveUserCommand = new RelayCommand(SetActiveUser, CanSetActiveUser);
-            ActiveUser = "Goodbye";
+
+            ChangeReceiverCommand = new RelayCommand(ChangeReceiver, CanChangeReceiver);
+
 
         }
         public bool CanSetActiveUser(object obj)
@@ -45,18 +92,45 @@ namespace UkazkovyTest.ViewModel
 
         public void SetActiveUser(object obj)
         {
-            ActiveUser = "HELLO";
+            
         }
 
-        public bool CanShowWindow(object obj)
+        public bool CanSendMessage(object obj)
         {
             return true;
         }
 
-        public void ShowWindow(object obj)
+        public void SendMessage(object obj)
         {
-            Login login = new Login();
-            login.Show();
+            
+            Messages.Add(new Message() { MessageContent = SendContent, ReceiverId = 1, SenderId = 2 });
         }
+
+        public bool CanChangeReceiver(object parametr)
+        {
+            if (parametr is int value && value == ActiveReceiver.id)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+                
+        }
+
+        public void ChangeReceiver(object parametr)
+        {
+
+            foreach (User user in Users)
+            {
+                if (parametr is int value && value == user.id)
+                {
+                    ActiveReceiver = user;
+                    break;
+                }
+            }
+        }
+
     }
 }

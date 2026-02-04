@@ -21,7 +21,13 @@ namespace UkazkovyTest.View
             InitializeComponent();
             LoginModel loginModel = new LoginModel();
             this.DataContext = loginModel;
+            if (DataContext is LoginModel lm)
+            {
+                lm.RequestClose += () => this.Close();
+            }
         }
+
+
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {

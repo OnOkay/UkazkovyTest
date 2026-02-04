@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MessageDatabase>
+	<Message>
+		<SentTime></SentTime>
+		<ReceiveTime></ReceiveTime>
+		<MessageContet>Ahoj</MessageContet>
+		<SenderId>1</SenderId>
+		<ReceiverId>0</ReceiverId>
+	</Message>
+	<Message>
+		<SentTime></SentTime>
+		<ReceiveTime></ReceiveTime>
+		<MessageContet>Co se stalo:</MessageContet>
+		<SenderId>1</SenderId>
+		<ReceiverId>3</ReceiverId>
+	</Message>
+	<Message>
+		<SentTime></SentTime>
+		<ReceiveTime></ReceiveTime>
+		<MessageContet>Platí dnešek?</MessageContet>
+		<SenderId>2</SenderId>
+		<ReceiverId>0</ReceiverId>
+	</Message>
+	<Message>
+		<SentTime></SentTime>
+		<ReceiveTime></ReceiveTime>
+		<MessageContet>Čau</MessageContet>
+		<SenderId>0</SenderId>
+		<ReceiverId>1</ReceiverId>
+	</Message>
+	<Message>
+		<SentTime></SentTime>
+		<ReceiveTime></ReceiveTime>
+		<MessageContet>Jak se máš?</MessageContet>
+		<SenderId>1</SenderId>
+		<ReceiverId>0</ReceiverId>
+	</Message>
+</MessageDatabase>
+

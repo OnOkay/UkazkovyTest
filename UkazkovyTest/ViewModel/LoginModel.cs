@@ -27,6 +27,7 @@ namespace UkazkovyTest.ViewModel
         public string PasswordBox { get; set; }
 
         public string MistakeAnswer {  get; set; }
+        public event Action RequestClose;
 
 
         public LoginModel()
@@ -65,13 +66,15 @@ namespace UkazkovyTest.ViewModel
                 {
                     if (PasswordBox == user.password)
                     {
-                        MainWindow main = new MainWindow();
+
+                        MainWindow main = new MainWindow(user);
+                        Application.Current.MainWindow = main;
                         main.Show();
+                        RequestClose?.Invoke();
+                        break;
                     }
                 }
             }
-            MistakeAnswer = "You entered wrong username or password";
-
         }
     }
 }
