@@ -10,13 +10,12 @@ namespace UkazkovyTest.Model
         {
 
         }
-        public DateOnly DateSend {  get; set; }
-        public TimeOnly TimeSend { get; set; }
+        public DateTime SendTime { get; set; } 
+        public DateTime ReceiveTime { get; set; }
         public string MessageContent { get; set; }
         public int SenderId { get; set; }
         public int ReceiverId { get; set; }
-        public DateOnly DateReceive { get; set; }
-        public TimeOnly TimeReceive { get; set; }
+
 
     }
 }

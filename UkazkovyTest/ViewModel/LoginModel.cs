@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Reflection.Metadata;
+using System.Runtime.InteropServices.Swift;
+using System.Text;
+using System.Threading.Channels;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using UkazkovyTest.Commands;
+using UkazkovyTest.Model;
+using UkazkovyTest.View;
+
+namespace UkazkovyTest.ViewModel
+{
+    //Proc nefunguje INotifyPropertyChange
+    public class LoginModel:INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+        //Promenná sekce
+        public ObservableCollection<User> Users { get; set; }
+        public ICommand ShowWindowCommand { get; set; }
+        public ICommand QuitAppCommand {  get; set; }
+        public string UserNameBox {  get; set; }
+        public string PasswordBox { get; set; }
+
+        public string MistakeAnswer {  get; set; }
+
+
+        public LoginModel()
+        {
+            Users = UserManager.GetUsers();
+
+            ShowWindowCommand = new RelayCommand(ShowWindow, CanShowWindow);
+
+            QuitAppCommand = new RelayCommand(QuitApp, CanQuitApp);
+
+            
+        }
+
+        public bool CanQuitApp(object obj)
+        {
+            return true;
+        }
+
+        public void QuitApp(object obj)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        //Tady probehne kontrola, zda lze otevrit okno
+        public bool CanShowWindow(object obj)
+        {
+            return true;
+        }
+
+        //Otevre nove okno a zavre sebe
+        public void ShowWindow(object obj)
+        {
+            foreach (User user in Users)
+            {
+                if (UserNameBox == user.username)
+                {
+                    if (PasswordBox == user.password)
+                    {
+                        MainWindow main = new MainWindow();
+                        main.Show();
+                    }
+                }
+            }
+            MistakeAnswer = "You entered wrong username or password";
+
+        }
+    }
+}

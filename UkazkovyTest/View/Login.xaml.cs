@@ -9,22 +9,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UkazkovyTest.ViewModel;
 
 namespace UkazkovyTest.View
 {
-    /// <summary>
-    /// Interakční logika pro Login.xaml
-    /// </summary>
+
     public partial class Login : Window
     {
         public Login()
         {
             InitializeComponent();
+            LoginModel loginModel = new LoginModel();
+            this.DataContext = loginModel;
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
+        
         }
     }
 }

@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UkazkovyTest.View"
         mc:Ignorable="d"
-        Title="Login" Height="233" Width="299">
+        Title="Login" Height="233" Width="291">
     <Grid>
-        <PasswordBox Name="PasswordBox" HorizontalAlignment="Left" Margin="60,126,0,0" VerticalAlignment="Top" Width="178" Grid.ColumnSpan="2" Height="18"/>
-        <TextBox Name="UsernameBox" HorizontalAlignment="Center" Margin="0,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="178"/>
-        <Label Content="Please enter your username and password&#xD;&#xA;" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="118,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393" Grid.ColumnSpan="2"/>
-        <Label Content="Password&#xA;" HorizontalAlignment="Left" Margin="117,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393" Grid.ColumnSpan="2"/>
-        <Button Name="LoginButton" Content="Log in" HorizontalAlignment="Left" Margin="200,173,0,0" VerticalAlignment="Top" Click="LoginButton_Click"/>
-        <Button Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="60,173,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="UsernameBox" HorizontalAlignment="Left" Margin="50,83,0,0" TextWrapping="Wrap" Text="{Binding UserNameBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="178"/>
+        <Label Content="Please enter your username and password&#xD;&#xA;" HorizontalAlignment="Left" Margin="23,7,0,0" VerticalAlignment="Top" Height="29"/>
+        <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="107,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393"/>
+        <Label Content="Password&#xA;" HorizontalAlignment="Left" Margin="107,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393"/>
+        <Button Command="{Binding QuitAppCommand}" Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="23,173,0,0" VerticalAlignment="Top"/>
+        <Button Command="{Binding ShowWindowCommand}" Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="240,173,0,0" VerticalAlignment="Top" Click="LoginButton_Click"/>
+        <TextBox Name="PasswordBox" HorizontalAlignment="Left" Margin="50,125,0,0" TextWrapping="Wrap" Text="{Binding PasswordBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="178"/>
+        <Label Content="{Binding MistakeAnswer, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="23,36,0,0" VerticalAlignment="Top" Height="29"/>
 
     </Grid>
 </Window>

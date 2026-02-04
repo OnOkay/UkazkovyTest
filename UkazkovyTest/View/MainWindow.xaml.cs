@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UkazkovyTest.Model;
 using UkazkovyTest.ViewModel;
 
 namespace UkazkovyTest
@@ -22,7 +23,21 @@ namespace UkazkovyTest
             InitializeComponent();
             MainWindowModel mainViewModel = new MainWindowModel();
             this.DataContext = mainViewModel;
+
+            foreach(User user in mainViewModel.Users)
+            {
+                //Pridat kommand který zmeni label
+                if (user.id != 2)
+                {
+                    Button button = new Button() { Content = user.username, Command = mainViewModel.SetActiveUserCommand };
+                    UserList.Children.Add(button);
+                }
+                
+            }
+
+            ActiveUser.Content = mainViewModel.ActiveUser;
         }
         
+
     }
 }
