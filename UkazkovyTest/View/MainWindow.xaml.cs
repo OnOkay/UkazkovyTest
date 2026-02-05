@@ -24,18 +24,6 @@ namespace UkazkovyTest
             InitializeComponent();
             MainWindowModel mainWindowModel = new MainWindowModel(LogedUser);
             this.DataContext = mainWindowModel;
-
-            foreach (User user in mainWindowModel.Users)
-            {
-                //Pridat kommand který zmeni label
-                if (user.id != LogedUser.id) //mainWindowModel.ActiveUser.id
-                {
-                    Button button = new Button() { Content = user.username, Command = mainWindowModel.ChangeReceiverCommand, CommandParameter = user.id };
-
-                    UserList.Children.Add(button);
-                }
-
-            }
         }
     }
 

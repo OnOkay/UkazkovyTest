@@ -2,35 +2,35 @@
 <MessageDatabase>
   <Message>
     <SentTime></SentTime>
-    <ReceiveTime></ReceiveTime>
+    <ReceiveTime>05.02.2026 22:30:01</ReceiveTime>
     <MessageContent>Ahoj</MessageContent>
     <SenderId>1</SenderId>
     <ReceiverId>0</ReceiverId>
   </Message>
   <Message>
     <SentTime></SentTime>
-    <ReceiveTime></ReceiveTime>
+    <ReceiveTime>05.02.2026 22:38:23</ReceiveTime>
     <MessageContent>Co se stalo:</MessageContent>
     <SenderId>1</SenderId>
     <ReceiverId>3</ReceiverId>
   </Message>
   <Message>
     <SentTime></SentTime>
-    <ReceiveTime></ReceiveTime>
+    <ReceiveTime>05.02.2026 22:30:11</ReceiveTime>
     <MessageContent>Platí dnešek?</MessageContent>
     <SenderId>2</SenderId>
     <ReceiverId>0</ReceiverId>
   </Message>
   <Message>
     <SentTime></SentTime>
-    <ReceiveTime></ReceiveTime>
+    <ReceiveTime>2026-02-05T21:02:49</ReceiveTime>
     <MessageContent>Čau</MessageContent>
     <SenderId>0</SenderId>
     <ReceiverId>1</ReceiverId>
   </Message>
   <Message>
     <SentTime></SentTime>
-    <ReceiveTime></ReceiveTime>
+    <ReceiveTime>05.02.2026 22:30:01</ReceiveTime>
     <MessageContent>Jak se máš?</MessageContent>
     <SenderId>1</SenderId>
     <ReceiverId>0</ReceiverId>
@@ -65,5 +65,72 @@
     <ReceiverId>0</ReceiverId>
     <MessageContent>hALO</MessageContent>
     <SentTime>2026-02-05T19:00:12.0463875+01:00</SentTime>
+  </Message>
+  <Message>
+    <SenderId>3</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Halo</MessageContent>
+    <SentTime>2026-02-05T20:59:38.610216+01:00</SentTime>
+  </Message>
+  <Message>
+    <SenderId>3</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>h</MessageContent>
+    <SentTime>2026-02-05T21:30:31.7553378+01:00</SentTime>
+  </Message>
+  <Message>
+    <SenderId>3</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>h</MessageContent>
+    <SentTime>2026-02-05T21:32:26.4526404+01:00</SentTime>
+  </Message>
+  <Message>
+    <SenderId>4</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>h</MessageContent>
+    <SentTime>2026-02-05T21:34:33.074847+01:00</SentTime>
+    <ReceiveTime>05.02.2026 22:08:28</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>5</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>h</MessageContent>
+    <SentTime>2026-02-05T21:34:57.7624048+01:00</SentTime>
+    <ReceiveTime />
+  </Message>
+  <Message>
+    <SenderId>3</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>HEY</MessageContent>
+    <SentTime>2026-02-05T22:29:03.003798+01:00</SentTime>
+    <ReceiveTime>05.02.2026 22:30:12</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Heay</MessageContent>
+    <SentTime>2026-02-05T22:29:14.2870069+01:00</SentTime>
+    <ReceiveTime>05.02.2026 22:30:01</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Hwwww</MessageContent>
+    <SentTime>2026-02-05T22:33:29.8731884+01:00</SentTime>
+    <ReceiveTime>05.02.2026 22:34:25</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>0</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>QuickT napsal</MessageContent>
+    <SentTime>2026-02-05T22:40:45.4833426+01:00</SentTime>
+    <ReceiveTime>05.02.2026 22:40:48</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>0</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>QuickT napsal podruhy</MessageContent>
+    <SentTime>2026-02-05T22:41:02.9102247+01:00</SentTime>
+    <ReceiveTime>05.02.2026 22:41:56</ReceiveTime>
   </Message>
 </MessageDatabase>

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
-using System.Xml.Linq;
 using System.IO;
+using System.Text;
+using System.Windows.Controls;
+using System.Windows.Media.Animation;
+using System.Xml.Linq;
 
 namespace UkazkovyTest.Model
 {
@@ -34,8 +36,8 @@ namespace UkazkovyTest.Model
                     ReceiveTime = ParseDate(x.Element("ReceiveTime")),
                     MessageContent = (string)x.Element("MessageContent"),
                     SenderId = (int?)x.Element("SenderId") ?? 0,
-                    ReceiverId = (int?)x.Element("ReceiverId") ?? 0,
-                    
+                    ReceiverId = (int?)x.Element("ReceiverId") ?? 1,
+
                 });
 
             return new ObservableCollection<Message>(messages);
@@ -54,20 +56,32 @@ namespace UkazkovyTest.Model
 
         public static void NewMessage(string Text, int R, int S)
         {
-            Message x = new Message();
-            x.SendTime=DateTime.Now;
-            x.MessageContent = Text;
-            x.ReceiverId = R;
-            x.SenderId = S;
-            _MessageDatabase.Add(x);
-            AddMessage(absolutePath, x);
+            Message message = new Message();
+            message.SendTime = DateTime.Now;
+            message.MessageContent = Text;
+            message.ReceiverId = R;
+            message.SenderId = S;
+            _MessageDatabase.Add(message);
+            AddMessage(absolutePath, message);
         }
-        
+
+        public static void SetReceiveTime(int S, int R)
+        {
+            foreach(Message message in _MessageDatabase)
+            {
+                if((message.ReceiverId == R && message.SenderId == S)&&(message.ReceiveTime==null))
+                {
+                    message.ReceiveTime = DateTime.Now;
+                    SetXMLReceive(absolutePath, R, S);
+                }
+            }
+        }
+
         public static void AddMessage(string filePath, Message msg)
         {
             XDocument doc;
 
-            
+
             if (File.Exists(filePath))
             {
                 doc = XDocument.Load(filePath);
@@ -77,19 +91,46 @@ namespace UkazkovyTest.Model
                 doc = new XDocument(new XElement("messages"));
             }
 
-            
+
             XElement messageElement =
                 new XElement("Message",
                     new XElement("SenderId", msg.SenderId),
                     new XElement("ReceiverId", msg.ReceiverId),
                     new XElement("MessageContent", msg.MessageContent),
-                    new XElement("SentTime",msg.SendTime)
+                    new XElement("SentTime", msg.SendTime),
+                    new XElement("ReceiveTime",msg.ReceiveTime)
                 );
 
             doc.Root!.Add(messageElement);
 
             doc.Save(filePath);
-          }         
-         
+        }
+
+        public static void SetXMLReceive(string filePath, int R, int S)
+        {
+            XDocument doc;
+            doc = XDocument.Load(filePath);
+            foreach (var message in doc.Descendants("Message"))
+            {
+                var rElement = message.Element("ReceiverId");
+                var sElement = message.Element("SenderId");
+                var timeElement = message.Element("ReceiveTime");
+                string newTime = DateTime.Now.ToString();
+
+                if (rElement != null && sElement != null && timeElement != null)
+                {
+                    int r = int.Parse(rElement.Value);
+                    int s = int.Parse(sElement.Value);
+
+                    if (r == R && s == S && string.IsNullOrEmpty(timeElement.Value))
+                    {
+                        timeElement.Value = newTime.ToString();
+                    }
+                }
+            }
+            doc.Save(absolutePath);
+        }
+
+            
     }
 }
