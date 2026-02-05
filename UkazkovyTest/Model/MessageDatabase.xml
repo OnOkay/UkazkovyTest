@@ -3,35 +3,35 @@
 	<Message>
 		<SentTime></SentTime>
 		<ReceiveTime></ReceiveTime>
-		<MessageContet>Ahoj</MessageContet>
+		<MessageContent>Ahoj</MessageContent>
 		<SenderId>1</SenderId>
 		<ReceiverId>0</ReceiverId>
 	</Message>
 	<Message>
 		<SentTime></SentTime>
 		<ReceiveTime></ReceiveTime>
-		<MessageContet>Co se stalo:</MessageContet>
+		<MessageContent>Co se stalo:</MessageContent>
 		<SenderId>1</SenderId>
 		<ReceiverId>3</ReceiverId>
 	</Message>
 	<Message>
 		<SentTime></SentTime>
 		<ReceiveTime></ReceiveTime>
-		<MessageContet>Platí dnešek?</MessageContet>
+		<MessageContent>Platí dnešek?</MessageContent>
 		<SenderId>2</SenderId>
 		<ReceiverId>0</ReceiverId>
 	</Message>
 	<Message>
 		<SentTime></SentTime>
 		<ReceiveTime></ReceiveTime>
-		<MessageContet>Čau</MessageContet>
+		<MessageContent>Čau</MessageContent>
 		<SenderId>0</SenderId>
 		<ReceiverId>1</ReceiverId>
 	</Message>
 	<Message>
 		<SentTime></SentTime>
 		<ReceiveTime></ReceiveTime>
-		<MessageContet>Jak se máš?</MessageContet>
+		<MessageContent>Jak se máš?</MessageContent>
 		<SenderId>1</SenderId>
 		<ReceiverId>0</ReceiverId>
 	</Message>

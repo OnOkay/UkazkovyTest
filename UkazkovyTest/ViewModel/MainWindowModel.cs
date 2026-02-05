@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using UkazkovyTest.Commands;
 using UkazkovyTest.Model;
@@ -20,14 +21,14 @@ namespace UkazkovyTest.ViewModel
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
 
+
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<Message> Messages { get; set; }
-
+        public ICollectionView FiltredMessages { get; }
         public ICommand SendMessageCommand { get; set; }
-
         public ICommand SetActiveUserCommand {  get; set; }
-
         public ICommand ChangeReceiverCommand {  get; set; }
+        public ObservableCollection<MessageUserModel> MessageTest { get; }
 
 
         public User ActiveUser { get;}
@@ -59,6 +60,7 @@ namespace UkazkovyTest.ViewModel
             {
                 _ActiveReceiver = value;
                 OnPropertyChanged();
+                FiltredMessages.Refresh();
             }
         }
 
@@ -67,6 +69,7 @@ namespace UkazkovyTest.ViewModel
             SendContent = "h";
             Users = UserManager.GetUsers();
             Messages = MessageManager.GetMessages();
+            FiltredMessages = CollectionViewSource.GetDefaultView(Messages);
             ActiveUser = acitiveUser;
             foreach (User user in Users)
             {
@@ -76,6 +79,23 @@ namespace UkazkovyTest.ViewModel
                     break;
                 }
             }
+            MessageTest = new ObservableCollection<MessageUserModel>(
+                Messages.Select(m =>
+                {
+                    var otherUserId =
+                        m.SenderId == ActiveUser.id ? m.ReceiverId : m.SenderId;
+
+                    var otherUser = Users.First(u => u.id == otherUserId);
+
+                    return new MessageUserModel(m, otherUser);
+                })
+                );
+
+
+
+            FiltredMessages.Filter = FilterMessages;
+            FiltredMessages.SortDescriptions.Clear();
+            FiltredMessages.SortDescriptions.Add(new SortDescription(nameof(MessageUserModel.SendTime), ListSortDirection.Ascending));
 
             SendMessageCommand = new RelayCommand(SendMessage, CanSendMessage);
 
@@ -102,21 +122,13 @@ namespace UkazkovyTest.ViewModel
 
         public void SendMessage(object obj)
         {
-            
-            Messages.Add(new Message() { MessageContent = SendContent, ReceiverId = 1, SenderId = 2 });
+            MessageManager.NewMessage(SendContent, ActiveUser.id, ActiveReceiver.id);
+            SendContent = "";
         }
 
         public bool CanChangeReceiver(object parametr)
         {
-            if (parametr is int value && value == ActiveReceiver.id)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-                
+            return true;
         }
 
         public void ChangeReceiver(object parametr)
@@ -130,6 +142,15 @@ namespace UkazkovyTest.ViewModel
                     break;
                 }
             }
+        }
+
+        private bool FilterMessages(object obj)
+        {
+            if (ActiveReceiver.id == null || ActiveUser.id == null)
+                return true;
+
+            var msg = obj as Message;
+            return msg != null && (msg.SenderId == ActiveUser.id && msg.ReceiverId == ActiveReceiver.id) || (msg.SenderId == ActiveReceiver.id && msg.ReceiverId == ActiveUser.id);
         }
 
     }

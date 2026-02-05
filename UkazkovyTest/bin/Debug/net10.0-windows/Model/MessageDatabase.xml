@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessageDatabase>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime></ReceiveTime>
+    <MessageContent>Ahoj</MessageContent>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+  </Message>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime></ReceiveTime>
+    <MessageContent>Co se stalo:</MessageContent>
+    <SenderId>1</SenderId>
+    <ReceiverId>3</ReceiverId>
+  </Message>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime></ReceiveTime>
+    <MessageContent>Platí dnešek?</MessageContent>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+  </Message>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime></ReceiveTime>
+    <MessageContent>Čau</MessageContent>
+    <SenderId>0</SenderId>
+    <ReceiverId>1</ReceiverId>
+  </Message>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime></ReceiveTime>
+    <MessageContent>Jak se máš?</MessageContent>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>h</MessageContent>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Slysime se?</MessageContent>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>h</MessageContent>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>asd</MessageContent>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>mORE</MessageContent>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>hALO</MessageContent>
+    <SentTime>2026-02-05T19:00:12.0463875+01:00</SentTime>
+  </Message>
+</MessageDatabase>

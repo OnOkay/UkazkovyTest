@@ -18,34 +18,25 @@ namespace UkazkovyTest
     /// </summary>
     public partial class MainWindow : Window
     {
- 
+
         public MainWindow(User LogedUser)
         {
             InitializeComponent();
             MainWindowModel mainWindowModel = new MainWindowModel(LogedUser);
             this.DataContext = mainWindowModel;
 
-            foreach(User user in mainWindowModel.Users)
+            foreach (User user in mainWindowModel.Users)
             {
                 //Pridat kommand který zmeni label
                 if (user.id != LogedUser.id) //mainWindowModel.ActiveUser.id
                 {
                     Button button = new Button() { Content = user.username, Command = mainWindowModel.ChangeReceiverCommand, CommandParameter = user.id };
+
                     UserList.Children.Add(button);
                 }
-                
+
             }
-
-            //Toto budu muset zkusit i u komandu
-            foreach(Message message in mainWindowModel.Messages)
-            {
-
-                Label label = new Label() { Content = message.MessageContent};
-                MessageBoard.Children.Add(label);
-            }
-
         }
-        
-
     }
+
 }

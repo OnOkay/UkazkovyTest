@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Swift;
 using System.Text;
 using System.Threading.Channels;
@@ -19,6 +20,7 @@ namespace UkazkovyTest.ViewModel
     public class LoginModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         //Promenná sekce
         public ObservableCollection<User> Users { get; set; }
         public ICommand ShowWindowCommand { get; set; }
@@ -26,7 +28,19 @@ namespace UkazkovyTest.ViewModel
         public string UserNameBox {  get; set; }
         public string PasswordBox { get; set; }
 
-        public string MistakeAnswer {  get; set; }
+   
+
+        private string _MistakeAnswer;
+
+        public string MistakeAnswer
+        {
+            get => _MistakeAnswer;
+            set
+            {
+                _MistakeAnswer = value;
+                OnPropertyChanged();
+            }
+        }
         public event Action RequestClose;
 
 
@@ -38,7 +52,7 @@ namespace UkazkovyTest.ViewModel
 
             QuitAppCommand = new RelayCommand(QuitApp, CanQuitApp);
 
-            
+
         }
 
         public bool CanQuitApp(object obj)
@@ -75,6 +89,7 @@ namespace UkazkovyTest.ViewModel
                     }
                 }
             }
+            MistakeAnswer = "Incorrect password or username";
         }
     }
 }

@@ -6,18 +6,31 @@
         xmlns:local="clr-namespace:UkazkovyTest"
         mc:Ignorable="d"
         Title="Dopisovac" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,0,0,1">
         <Button Command ="{Binding SendMessageCommand}" IsEnabled="{Binding CanClickButton}" Name="SendButton" Content="Send" HorizontalAlignment="Left" Margin="710,375,0,0" VerticalAlignment="Top" Height="28" Width="49"/>
         <TextBox Text="{Binding SendContent, UpdateSourceTrigger=PropertyChanged}" Name="MessageBox" HorizontalAlignment="Left" Margin="262,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="443" Height="28"/>
         <Label Content="Users" HorizontalAlignment="Left" Margin="81,24,0,0" VerticalAlignment="Top" Width="41" RenderTransformOrigin="-0.464,2.321"/>
-        <StackPanel DataContext="{Binding Test}" Name="MessageBoard" Margin="262,77,41,76">
-        </StackPanel>
         <Rectangle  HorizontalAlignment="Left" Height="34" Margin="263,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="249" Fill="#FF2F8CC8"/>
         <StackPanel Name="UserList" Margin="0,55,580,31">
         </StackPanel>
         <Rectangle  HorizontalAlignment="Left" Height="34" Margin="510,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="249" Fill="#FF2FC87E"/>
         <Label Name="ActiveReciever" Content="{Binding ActiveReceiver.surname, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="597,43,0,0" VerticalAlignment="Top"/>
         <Label Name="ActiveUser" Content="{Binding ActiveUser.surname, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="362,43,0,0" VerticalAlignment="Top"/>
+
+        <ListView SelectionMode="Single"
+            ItemsSource="{Binding FiltredMessages}" Margin="263,93,41,64">
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="Kdo" DisplayMemberBinding="{Binding SendTime}" />
+                    <GridViewColumn Header="Komu" DisplayMemberBinding="{Binding UserName}" />
+                    <GridViewColumn Header="Zprava" DisplayMemberBinding="{Binding MessageContent}" />
+                    <GridViewColumn Header="Zprava" DisplayMemberBinding="{Binding ReceiverId}" />
+                    <GridViewColumn Header="Zprava" DisplayMemberBinding="{Binding SenderId}" />
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="0/255" HorizontalAlignment="Left" Margin="716,403,0,0" VerticalAlignment="Top"/>
 
 
 
