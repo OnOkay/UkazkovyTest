@@ -16,23 +16,21 @@
         <Label Name="ActiveUser" Content="{Binding ActiveUser.surname, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="362,43,0,0" VerticalAlignment="Top"/>
 
         <ListView SelectionMode="Single"
-            ItemsSource="{Binding FiltredMessages}" Margin="263,93,41,64">
+            ItemsSource="{Binding UserMessages}" Margin="263,93,41,64">
             <ListView.View>
                 <GridView >
                     <GridViewColumn Header="Kdy" DisplayMemberBinding="{Binding SendTime}" />
-                    <GridViewColumn Header="Poslal" DisplayMemberBinding="{Binding UserName}" />
+                    <GridViewColumn Header="Poslal" DisplayMemberBinding="{Binding Username}" />
                     <GridViewColumn Header="Zprava" DisplayMemberBinding="{Binding MessageContent}" />
-                    <GridViewColumn Header="Dostal" DisplayMemberBinding="{Binding ReceiverId}" />
-                    <GridViewColumn Header="Poslal" DisplayMemberBinding="{Binding SenderId}" />
                     <GridViewColumn Header="Videl" DisplayMemberBinding="{Binding ReceiveTime}" />
                     
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="CharCount" HorizontalAlignment="Left" Margin="712,377,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CharCount}" HorizontalAlignment="Left" Margin="712,377,0,0" VerticalAlignment="Top" Height="26" Width="47"/>
 
         <ScrollViewer Margin="10,55,602,44">
-            <ItemsControl ItemsSource="{Binding Users}">
+            <ItemsControl ItemsSource="{Binding BtnUsers}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Vertical"/>
@@ -42,7 +40,6 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button Content="{Binding username}"
-                                Background="{Binding ., Converter={StaticResource BtnColourConverter}, ConverterParameter={Binding DataContext.Messages, RelativeSource={RelativeSource AncestorType=Window}}}"
                                 Command="{Binding DataContext.ChangeReceiverCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                 CommandParameter="{Binding id}"/>
                     </DataTemplate>

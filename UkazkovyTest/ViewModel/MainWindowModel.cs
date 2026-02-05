@@ -24,8 +24,9 @@ namespace UkazkovyTest.ViewModel
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
 
-
+        public ObservableCollection<UserMessage> UserMessages { get; set; }
         public ObservableCollection<User> Users { get; set; }
+        public ObservableCollection<User> BtnUsers { get; set; }
         public ObservableCollection<Message> Messages { get; set; }
         public ICollectionView FiltredMessages { get; }
         public ICommand SendMessageCommand { get; set; }
@@ -36,7 +37,6 @@ namespace UkazkovyTest.ViewModel
         public User ActiveUser { get;}
         
         private string _SendContent;
-
         public string SendContent
         {
             get => _SendContent;
@@ -47,9 +47,27 @@ namespace UkazkovyTest.ViewModel
                     _SendContent = value;
                     OnPropertyChanged(nameof(SendContent));
                     OnPropertyChanged(nameof(CanClickButton));
+                    OnPropertyChanged(nameof(CharCount));
                 }
             }
         }
+
+        private string _SendLentgh;
+        public string SendLentgh
+        {
+            get => _SendLentgh;
+            set
+            {
+                if (_SendLentgh != value)
+                {
+                    _SendLentgh = value;
+                    OnPropertyChanged(nameof(SendLentgh));
+                    
+                }
+            }
+        }
+        public int CharCount => string.IsNullOrEmpty(_SendLentgh) ? 0 : _SendLentgh.Length;
+
         public bool CanClickButton => !string.IsNullOrEmpty(SendContent) || SendContent.Length > 255;
 
 
@@ -68,13 +86,15 @@ namespace UkazkovyTest.ViewModel
 
         public MainWindowModel(User acitiveUser)
         {
-            SendContent = "h";
+            SendContent = "";
             Users = UserManager.GetUsers();
-            Users.Remove(acitiveUser);
+            BtnUsers = UserManager.GetUsers();
+            BtnUsers.Remove(acitiveUser);
             Messages = MessageManager.GetMessages();
-            FiltredMessages = CollectionViewSource.GetDefaultView(Messages);
+            
             ActiveUser = acitiveUser;
-
+            UpdateUserMessages();
+            FiltredMessages = CollectionViewSource.GetDefaultView(UserMessages);
             foreach (User user in Users)
             {
                 if (user != ActiveUser)
@@ -115,7 +135,7 @@ namespace UkazkovyTest.ViewModel
         public void SendMessage(object obj)
         {
             MessageManager.NewMessage(SendContent, ActiveUser.id, ActiveReceiver.id);
-
+            UpdateUserMessages();
             SendContent = "";
         }
 
@@ -148,12 +168,55 @@ namespace UkazkovyTest.ViewModel
             if (ActiveReceiver.id == null || ActiveUser.id == null)
                 return true;
             
-            var msg = obj as Message;
+            var msg = obj as UserMessage;
             return msg != null && (msg.SenderId == ActiveUser.id && msg.ReceiverId == ActiveReceiver.id) || (msg.SenderId == ActiveReceiver.id && msg.ReceiverId == ActiveUser.id);
         }
 
         public void UpdateButtonColor(object obj)
         {
         }
+
+        private void UpdateUserMessages()
+        {
+            var displayList = new ObservableCollection<UserMessage>();
+
+            foreach (Message m in Messages)
+            {
+                string jmeno="Chyba";
+
+                if (m.ReceiverId == ActiveUser.id)
+                {
+                    jmeno = ActiveUser.username;
+                }
+                else
+                {
+                    foreach (User user in Users)
+                    {
+                        if (m.ReceiverId == user.id)
+                        {
+                            jmeno = user.username;
+                            break;
+                        }
+                    }
+                }
+
+
+                displayList.Add(new UserMessage
+                {
+                    MessageContent = m.MessageContent,
+                    SendTime = m.SendTime,
+                    ReceiveTime = m.ReceiveTime,
+                    SenderId = m.SenderId,
+                    ReceiverId = m.ReceiverId,
+                    Username = jmeno
+                });
+            }
+
+            UserMessages = displayList;
+            OnPropertyChanged(nameof(UserMessages));
+        }
+
     }
+
+
 }
