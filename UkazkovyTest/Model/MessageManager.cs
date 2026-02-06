@@ -11,6 +11,8 @@ namespace UkazkovyTest.Model
 {
     class MessageManager
     {
+        //Message manage čte a zapisuje XML soubour
+        //následně předává do MainWindow ViewModelu
 
 
         private static DateTime? ParseDate(XElement element)
@@ -44,6 +46,7 @@ namespace UkazkovyTest.Model
         }
 
 
+
         public static string relativePath = @"Model\MessageDatabase.xml";
         public static string absolutePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
         public static ObservableCollection<Message> _MessageDatabase = ReadDB(absolutePath);
@@ -54,6 +57,7 @@ namespace UkazkovyTest.Model
             return _MessageDatabase;
         }
 
+        //Tvorba nové zprávy
         public static void NewMessage(string Text, int R, int S)
         {
             Message message = new Message();
@@ -65,6 +69,7 @@ namespace UkazkovyTest.Model
             AddMessage(absolutePath, message);
         }
 
+        //Zmena casu doruceni
         public static void SetReceiveTime(int S, int R)
         {
             foreach(Message message in _MessageDatabase)
@@ -77,6 +82,7 @@ namespace UkazkovyTest.Model
             }
         }
 
+        //XML
         public static void AddMessage(string filePath, Message msg)
         {
             XDocument doc;

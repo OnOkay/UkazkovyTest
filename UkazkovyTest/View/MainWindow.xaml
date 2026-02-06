@@ -23,11 +23,10 @@
                     <GridViewColumn Header="Poslal" DisplayMemberBinding="{Binding Username}" />
                     <GridViewColumn Header="Zprava" DisplayMemberBinding="{Binding MessageContent}" />
                     <GridViewColumn Header="Videl" DisplayMemberBinding="{Binding ReceiveTime}" />
-                    
+
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="{Binding CharCount}" HorizontalAlignment="Left" Margin="712,377,0,0" VerticalAlignment="Top" Height="26" Width="47"/>
 
         <ScrollViewer Margin="10,55,602,44">
             <ItemsControl ItemsSource="{Binding BtnUsers}">
@@ -46,6 +45,7 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
+
 
     </Grid>
 </Window>

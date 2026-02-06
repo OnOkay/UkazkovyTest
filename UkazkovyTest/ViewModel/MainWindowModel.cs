@@ -28,9 +28,13 @@ namespace UkazkovyTest.ViewModel
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<User> BtnUsers { get; set; }
         public ObservableCollection<Message> Messages { get; set; }
+
+        //Zpravovy filtr aby ukazoval pouze 2 spolu komunikujici osoby
         public ICollectionView FiltredMessages { get; }
+
+        //Posila obsah textboxu pro tvorbu nove zpravy
         public ICommand SendMessageCommand { get; set; }
-        public ICommand SetActiveUserCommand {  get; set; }
+        //Při stisknusti meni activeReceivera coz meni filtr zobrazenych zprav
         public ICommand ChangeReceiverCommand {  get; set; }
 
 
@@ -47,26 +51,9 @@ namespace UkazkovyTest.ViewModel
                     _SendContent = value;
                     OnPropertyChanged(nameof(SendContent));
                     OnPropertyChanged(nameof(CanClickButton));
-                    OnPropertyChanged(nameof(CharCount));
                 }
             }
         }
-
-        private string _SendLentgh;
-        public string SendLentgh
-        {
-            get => _SendLentgh;
-            set
-            {
-                if (_SendLentgh != value)
-                {
-                    _SendLentgh = value;
-                    OnPropertyChanged(nameof(SendLentgh));
-                    
-                }
-            }
-        }
-        public int CharCount => string.IsNullOrEmpty(_SendLentgh) ? 0 : _SendLentgh.Length;
 
         public bool CanClickButton => !string.IsNullOrEmpty(SendContent) || SendContent.Length > 255;
 
@@ -103,28 +90,16 @@ namespace UkazkovyTest.ViewModel
                     break;
                 }
             }
-            
 
             FiltredMessages.Filter = FilterMessages;
             FiltredMessages.SortDescriptions.Clear();
-            //FiltredMessages.SortDescriptions.Add(new SortDescription(nameof(MessageUserModel.SendTime), ListSortDirection.Ascending));
+            FiltredMessages.SortDescriptions.Add(new SortDescription(nameof(UserMessage.SendTime), ListSortDirection.Ascending));
 
             SendMessageCommand = new RelayCommand(SendMessage, CanSendMessage);
-
-            SetActiveUserCommand = new RelayCommand(SetActiveUser, CanSetActiveUser);
 
             ChangeReceiverCommand = new RelayCommand(ChangeReceiver, CanChangeReceiver);
 
             MessageManager.SetReceiveTime(ActiveUser.id, ActiveReceiver.id);
-        }
-        public bool CanSetActiveUser(object obj)
-        {
-            return true;
-        }
-
-        public void SetActiveUser(object obj)
-        {
-            
         }
 
         public bool CanSendMessage(object obj)
@@ -132,6 +107,7 @@ namespace UkazkovyTest.ViewModel
             return true;
         }
 
+        
         public void SendMessage(object obj)
         {
             MessageManager.NewMessage(SendContent, ActiveUser.id, ActiveReceiver.id);
@@ -144,6 +120,7 @@ namespace UkazkovyTest.ViewModel
             return true;
         }
 
+       
         public void ChangeReceiver(object parametr)
         {
             if (Users == null)
@@ -172,10 +149,7 @@ namespace UkazkovyTest.ViewModel
             return msg != null && (msg.SenderId == ActiveUser.id && msg.ReceiverId == ActiveReceiver.id) || (msg.SenderId == ActiveReceiver.id && msg.ReceiverId == ActiveUser.id);
         }
 
-        public void UpdateButtonColor(object obj)
-        {
-        }
-
+        //Spojuje Messages a Usery
         private void UpdateUserMessages()
         {
             var displayList = new ObservableCollection<UserMessage>();

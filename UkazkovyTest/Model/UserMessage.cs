@@ -7,6 +7,7 @@ namespace UkazkovyTest.Model
     public class UserMessage
     {
 
+        //Kombinuje obe tridy, abych mohl pres listview ukazovat jmeno misto id
         public string MessageContent { get; set; }
         public DateTime? SendTime { get; set; }
         public DateTime? ReceiveTime { get; set; }

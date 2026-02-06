@@ -12,7 +12,7 @@ namespace UkazkovyTest.Model
 {
     class UserManager
     {
-        
+        //Usermanager pouze cte z databaze a predava data oboum ViewModelum
         public static ObservableCollection<User> ReadDB (string path)
         {
             XDocument doc = XDocument.Load(path);

@@ -16,12 +16,10 @@ using UkazkovyTest.View;
 
 namespace UkazkovyTest.ViewModel
 {
-    //Proc nefunguje INotifyPropertyChange
     public class LoginModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        //Promenná sekce
         public ObservableCollection<User> Users { get; set; }
         public ICommand ShowWindowCommand { get; set; }
         public ICommand QuitAppCommand {  get; set; }
@@ -65,7 +63,6 @@ namespace UkazkovyTest.ViewModel
             System.Windows.Application.Current.Shutdown();
         }
 
-        //Tady probehne kontrola, zda lze otevrit okno
         public bool CanShowWindow(object obj)
         {
             return true;
