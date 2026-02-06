@@ -9,6 +9,7 @@
         DataContext="{Binding LoginWindow}">
     <Grid>
         <TextBox Name="UsernameBox" HorizontalAlignment="Left" Margin="50,83,0,0" TextWrapping="Wrap" Text="{Binding UserNameBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="178"/>
+        <!--Tlačítko Quit vypíná celou aplikaci | Tlačítko login Zkontroluje zda jsou údaje spravně a vpustí uživatele dál. Jinak Se zobrazí label, že se něco napsalo špatně-->
         <Button Command="{Binding QuitAppCommand}" Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="23,173,0,0" VerticalAlignment="Top"/>
         <Button Command="{Binding ShowWindowCommand}" Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="240,173,0,0" VerticalAlignment="Top" Click="LoginButton_Click"/>
         <TextBox Name="PasswordBox" HorizontalAlignment="Left" Margin="50,125,0,0" TextWrapping="Wrap" Text="{Binding PasswordBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="178"/>
@@ -16,6 +17,5 @@
         <Label Content="Please enter your username and password&#xD;&#xA;" HorizontalAlignment="Left" Margin="23,7,0,0" VerticalAlignment="Top" Height="29"/>
         <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="107,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393" Height="24"/>
         <Label Content="Password&#xA;" HorizontalAlignment="Left" Margin="107,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393" Height="24"/>
-
     </Grid>
 </Window>

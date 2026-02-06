@@ -41,7 +41,7 @@ namespace UkazkovyTest.ViewModel
         }
         public event Action RequestClose;
 
-
+        
         public LoginModel()
         {
             Users = UserManager.GetUsers();
@@ -52,12 +52,13 @@ namespace UkazkovyTest.ViewModel
 
 
         }
-
+        
         public bool CanQuitApp(object obj)
         {
             return true;
         }
 
+        //Vypíná aplikace
         public void QuitApp(object obj)
         {
             System.Windows.Application.Current.Shutdown();
@@ -68,7 +69,7 @@ namespace UkazkovyTest.ViewModel
             return true;
         }
 
-        //Otevre nove okno a zavre sebe
+        //Po kontrole bud otevre nove okno a zavre sebe nebo zobrazi ze se stala chyba
         public void ShowWindow(object obj)
         {
             foreach (User user in Users)

@@ -14,6 +14,7 @@ using System.Windows.Input;
 using UkazkovyTest.Commands;
 using UkazkovyTest.Model;
 using UkazkovyTest.View;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UkazkovyTest.ViewModel
 {
@@ -30,7 +31,7 @@ namespace UkazkovyTest.ViewModel
         public ObservableCollection<Message> Messages { get; set; }
 
         //Zpravovy filtr aby ukazoval pouze 2 spolu komunikujici osoby
-        public ICollectionView FiltredMessages { get; }
+        public ICollectionView FiltredMessages { get; set; }
 
         //Posila obsah textboxu pro tvorbu nove zpravy
         public ICommand SendMessageCommand { get; set; }
@@ -40,6 +41,7 @@ namespace UkazkovyTest.ViewModel
 
         public User ActiveUser { get;}
         
+        //Sbírá obsah textboxu, na kterém záleží Obsah labelu a obsah nově vytvořené zprávy
         private string _SendContent;
         public string SendContent
         {
@@ -51,13 +53,15 @@ namespace UkazkovyTest.ViewModel
                     _SendContent = value;
                     OnPropertyChanged(nameof(SendContent));
                     OnPropertyChanged(nameof(CanClickButton));
+                    OnPropertyChanged(nameof(TextLength));
                 }
             }
         }
-
+        public int TextLength => string.IsNullOrEmpty(SendContent) ? 0 : SendContent.Length;
         public bool CanClickButton => !string.IsNullOrEmpty(SendContent) || SendContent.Length > 255;
 
 
+        //Proměná která určuje s kým momentálně uživatel komunikuje
         private User _ActiveReceiver;
 
         public User ActiveReceiver
@@ -95,6 +99,9 @@ namespace UkazkovyTest.ViewModel
             FiltredMessages.SortDescriptions.Clear();
             FiltredMessages.SortDescriptions.Add(new SortDescription(nameof(UserMessage.SendTime), ListSortDirection.Ascending));
 
+            OnPropertyChanged(nameof(FiltredMessages));
+            OnPropertyChanged(nameof(Messages));
+
             SendMessageCommand = new RelayCommand(SendMessage, CanSendMessage);
 
             ChangeReceiverCommand = new RelayCommand(ChangeReceiver, CanChangeReceiver);
@@ -107,11 +114,12 @@ namespace UkazkovyTest.ViewModel
             return true;
         }
 
-        
+        //Tvorba nové zprávy a aktulizace UI
         public void SendMessage(object obj)
         {
             MessageManager.NewMessage(SendContent, ActiveUser.id, ActiveReceiver.id);
             UpdateUserMessages();
+            FiltredMessages.Refresh();
             SendContent = "";
         }
 
@@ -120,7 +128,7 @@ namespace UkazkovyTest.ViewModel
             return true;
         }
 
-       
+       //Změna přijimatele zpráv od uživatele
         public void ChangeReceiver(object parametr)
         {
             if (Users == null)
@@ -135,49 +143,60 @@ namespace UkazkovyTest.ViewModel
                     {
                         ActiveReceiver = user;
                         MessageManager.SetReceiveTime(ActiveUser.id, ActiveReceiver.id);
+                        UpdateUserMessages();
+                        FiltredMessages.Refresh();
+
+                        OnPropertyChanged(nameof(Messages));
                         break;
                     }
                 }
             }
         }
+
+        //Filtr na zobrazování zpráv uživatele a příjemce
         private bool FilterMessages(object obj)
         {
-            if (ActiveReceiver.id == null || ActiveUser.id == null)
-                return true;
-            
             var msg = obj as UserMessage;
-            return msg != null && (msg.SenderId == ActiveUser.id && msg.ReceiverId == ActiveReceiver.id) || (msg.SenderId == ActiveReceiver.id && msg.ReceiverId == ActiveUser.id);
+            if (msg == null) return false;
+
+            return ((msg.SenderId == ActiveUser.id && msg.ReceiverId == ActiveReceiver.id) ||
+                    (msg.SenderId == ActiveReceiver.id && msg.ReceiverId == ActiveUser.id));
         }
 
-        //Spojuje Messages a Usery
-        private void UpdateUserMessages()
+        //Spojuje Messages a Usery. Je později filtrovaná
+        public void UpdateUserMessages()
         {
+            if (Messages == null) Messages = new ObservableCollection<Message>();
+            if (Users == null) Users = new ObservableCollection<User>();
+            if (ActiveUser == null) return;
+
             var displayList = new ObservableCollection<UserMessage>();
 
             foreach (Message m in Messages)
             {
-                string jmeno="Chyba";
+                if (m == null) continue;
+
+                string jmeno = "Chyba";
 
                 if (m.ReceiverId == ActiveUser.id)
                 {
-                    jmeno = ActiveUser.username;
+                    jmeno = ActiveUser.username ?? "Chyba";
                 }
                 else
                 {
                     foreach (User user in Users)
                     {
-                        if (m.ReceiverId == user.id)
+                        if (user != null && m.ReceiverId == user.id)
                         {
-                            jmeno = user.username;
+                            jmeno = user.username ?? "Chyba";
                             break;
                         }
                     }
                 }
 
-
                 displayList.Add(new UserMessage
                 {
-                    MessageContent = m.MessageContent,
+                    MessageContent = m.MessageContent ?? "",
                     SendTime = m.SendTime,
                     ReceiveTime = m.ReceiveTime,
                     SenderId = m.SenderId,
@@ -186,7 +205,14 @@ namespace UkazkovyTest.ViewModel
                 });
             }
 
-            UserMessages = displayList;
+            if (UserMessages == null)
+                UserMessages = new ObservableCollection<UserMessage>();
+            else
+                UserMessages.Clear();
+
+            foreach (var um in displayList)
+                UserMessages.Add(um);
+
             OnPropertyChanged(nameof(UserMessages));
         }
 

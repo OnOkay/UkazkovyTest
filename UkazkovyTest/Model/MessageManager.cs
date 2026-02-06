@@ -26,6 +26,7 @@ namespace UkazkovyTest.Model
             return null;
         }
 
+        //Čte XML dB
         public static ObservableCollection<Message> ReadDB(string path)
         {
             XDocument doc = XDocument.Load(path);
@@ -47,7 +48,7 @@ namespace UkazkovyTest.Model
 
 
 
-        public static string relativePath = @"Model\MessageDatabase.xml";
+        public static string relativePath = @"Model\MessageDatabase2.xml";
         public static string absolutePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
         public static ObservableCollection<Message> _MessageDatabase = ReadDB(absolutePath);
 

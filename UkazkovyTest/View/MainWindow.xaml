@@ -3,20 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:conv="clr-namespace:UkazkovyTest.Converters"
         xmlns:local="clr-namespace:UkazkovyTest"
         mc:Ignorable="d"
         Title="Dopisovac" Height="450" Width="800">
+    <Window.Resources>
+        <conv:BtnValueConverter x:Key="BtnValueConverter"/>
+    </Window.Resources>
     <Grid Margin="0,0,0,1">
+        <!--Tlačítko bere obsah textboxu a tvoří z něj novou zprávu Zpráva musí být 255>x>0-->
         <Button Command ="{Binding SendMessageCommand}" IsEnabled="{Binding CanClickButton}" Name="SendButton" Content="Send" HorizontalAlignment="Left" Margin="658,375,0,0" VerticalAlignment="Top" Height="28" Width="49"/>
         <TextBox Text="{Binding SendContent, UpdateSourceTrigger=PropertyChanged}" Name="MessageBox" HorizontalAlignment="Left" Margin="262,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" Height="28"/>
         <Label Content="Users" HorizontalAlignment="Left" Margin="81,24,0,0" VerticalAlignment="Top" Width="41" RenderTransformOrigin="-0.464,2.321"/>
-        <Rectangle  HorizontalAlignment="Left" Height="34" Margin="263,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="249" Fill="#FF2F8CC8"/>
+        <Rectangle  HorizontalAlignment="Left" Height="34" Margin="263,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="249" Fill="#FF618AA5"/>
         <Rectangle  HorizontalAlignment="Left" Height="34" Margin="510,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="249" Fill="#FF2FC87E"/>
         <Label Name="ActiveReciever" Content="{Binding ActiveReceiver.surname, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="597,43,0,0" VerticalAlignment="Top"/>
         <Label Name="ActiveUser" Content="{Binding ActiveUser.surname, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="362,43,0,0" VerticalAlignment="Top"/>
 
+        <!--Tabule zpráv, vypisuje zprávy 2 aktivních uživatelů-->
         <ListView SelectionMode="Single"
-            ItemsSource="{Binding UserMessages}" Margin="263,93,41,64">
+            ItemsSource="{Binding FiltredMessages}" Margin="263,93,41,64">
             <ListView.View>
                 <GridView >
                     <GridViewColumn Header="Kdy" DisplayMemberBinding="{Binding SendTime}" />
@@ -27,7 +33,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
+        <!--Seznam uživatelů tlačítek, zapomoci konverteru zobrazují nové zprávy (Uživatel A je chybny) a tlačítkem přemeuje aktivního příjemce-->
         <ScrollViewer Margin="10,55,602,44">
             <ItemsControl ItemsSource="{Binding BtnUsers}">
                 <ItemsControl.ItemsPanel>
@@ -40,11 +46,20 @@
                     <DataTemplate>
                         <Button Content="{Binding username}"
                                 Command="{Binding DataContext.ChangeReceiverCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                CommandParameter="{Binding id}"/>
+                                CommandParameter="{Binding id}">
+                            <Button.Background>
+                                <MultiBinding Converter="{StaticResource BtnValueConverter}">
+                                    <Binding Path="id"/>
+                                    <Binding Path="DataContext.Messages" RelativeSource="{RelativeSource AncestorType=Window}"/>
+                                </MultiBinding>
+                            </Button.Background>
+                        </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
+        <Label Content="{Binding TextLength}" HorizontalAlignment="Left" Margin="712,377,0,0" VerticalAlignment="Top"/>
+        <Label Content="/ 255" HorizontalAlignment="Left" Margin="727,377,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>

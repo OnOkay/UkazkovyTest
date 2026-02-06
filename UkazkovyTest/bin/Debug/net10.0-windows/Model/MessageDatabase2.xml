@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessageDatabase>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime>06.02.2026 11:05:31</ReceiveTime>
+    <MessageContent>Ahoj</MessageContent>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+  </Message>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime>06.02.2026 11:04:41</ReceiveTime>
+    <MessageContent>Cau</MessageContent>
+    <SenderId>0</SenderId>
+    <ReceiverId>1</ReceiverId>
+  </Message>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime>06.02.2026 11:05:31</ReceiveTime>
+    <MessageContent>Mej se</MessageContent>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+  </Message>
+  <Message>
+    <SenderId>0</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>Ahoj</MessageContent>
+    <SentTime>2026-02-06T11:06:43.7931684+01:00</SentTime>
+    <ReceiveTime>06.02.2026 11:09:05</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>0</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>Ahoj</MessageContent>
+    <SentTime>2026-02-06T11:08:11.6588305+01:00</SentTime>
+    <ReceiveTime>06.02.2026 11:09:06</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>Co prosím</MessageContent>
+    <SentTime>2026-02-06T11:08:26.8388177+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:35:59</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Pockej</MessageContent>
+    <SentTime>2026-02-06T11:09:15.2066416+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:35:57</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Halo</MessageContent>
+    <SentTime>2026-02-06T11:11:36.4847961+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:35:57</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Co se děje?</MessageContent>
+    <SentTime>2026-02-06T11:18:54.0397424+01:00</SentTime>
+    <ReceiveTime>06.02.2026 11:19:14</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>3</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Ahoj</MessageContent>
+    <SentTime>2026-02-06T11:20:37.8160357+01:00</SentTime>
+    <ReceiveTime>06.02.2026 11:21:15</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Koukni</MessageContent>
+    <SentTime>2026-02-06T11:24:25.8369558+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:34:55</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>lOOK</MessageContent>
+    <SentTime>2026-02-06T11:29:17.8800339+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:34:55</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Co se děje?</MessageContent>
+    <SentTime>2026-02-06T11:29:39.8859674+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:34:55</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>HELE</MessageContent>
+    <SentTime>2026-02-06T11:30:39.7916489+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:34:55</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Pomoc mi</MessageContent>
+    <SentTime>2026-02-06T11:31:25.2674302+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:34:55</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>3</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Mej se</MessageContent>
+    <SentTime>2026-02-06T11:35:17.0453571+01:00</SentTime>
+    <ReceiveTime />
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T11:37:58.2821345+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:35:57</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>3</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Zkusime to</MessageContent>
+    <SentTime>2026-02-06T11:47:28.9483786+01:00</SentTime>
+    <ReceiveTime />
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Halo</MessageContent>
+    <SentTime>2026-02-06T11:48:27.4467699+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:34:55</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T12:02:18.1788652+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:35:57</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T12:09:19.3127414+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:35:57</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T12:11:34.2919219+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:35:57</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T12:32:39.3144829+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:35:57</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T12:32:43.8779839+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:34:55</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Ahoj</MessageContent>
+    <SentTime>2026-02-06T12:38:26.3270933+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:38:41</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>0</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>Zkoušíme</MessageContent>
+    <SentTime>2026-02-06T12:40:19.6131069+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:40:31</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>X</MessageContent>
+    <SentTime>2026-02-06T12:41:04.0288908+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:41:27</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>X</MessageContent>
+    <SentTime>2026-02-06T12:41:48.3567571+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:46:13</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>Ahoj</MessageContent>
+    <SentTime>2026-02-06T12:45:00.2611171+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:45:23</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T12:49:33.5760635+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:49:48</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T12:52:50.490524+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:53:03</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>0</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>a</MessageContent>
+    <SentTime>2026-02-06T12:53:34.0268563+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:53:43</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>0</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-06T12:55:26.1298572+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:55:34</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>AX</MessageContent>
+    <SentTime>2026-02-06T12:55:44.5652115+01:00</SentTime>
+    <ReceiveTime>06.02.2026 12:55:55</ReceiveTime>
+  </Message>
+</MessageDatabase>

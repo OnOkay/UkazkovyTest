@@ -238,4 +238,25 @@
     <SentTime>2026-02-06T00:45:54.108456+01:00</SentTime>
     <ReceiveTime>06.02.2026 0:47:17</ReceiveTime>
   </Message>
+  <Message>
+    <SenderId>0</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>Ahoj</MessageContent>
+    <SentTime>2026-02-06T10:52:11.9690149+01:00</SentTime>
+    <ReceiveTime>06.02.2026 10:56:44</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>1</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>ASDSAD</MessageContent>
+    <SentTime>2026-02-06T10:56:47.7397777+01:00</SentTime>
+    <ReceiveTime />
+  </Message>
+  <Message>
+    <SenderId>2</SenderId>
+    <ReceiverId>0</ReceiverId>
+    <MessageContent>hALO</MessageContent>
+    <SentTime>2026-02-06T11:12:34.8881992+01:00</SentTime>
+    <ReceiveTime />
+  </Message>
 </MessageDatabase>

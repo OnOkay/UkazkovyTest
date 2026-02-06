@@ -24,3 +24,5 @@ C:\Users\ondra\source\repos\UkazkovyTest\UkazkovyTest\obj\Debug\net10.0-windows\
 C:\Users\ondra\source\repos\UkazkovyTest\UkazkovyTest\bin\Debug\net10.0-windows\Model\UserDatabase.xml
 C:\Users\ondra\source\repos\UkazkovyTest\UkazkovyTest\obj\Debug\net10.0-windows\UkazkovyTest_Content.g.cs
 C:\Users\ondra\source\repos\UkazkovyTest\UkazkovyTest\bin\Debug\net10.0-windows\Model\MessageDatabase.xml
+C:\Users\ondra\source\repos\UkazkovyTest\UkazkovyTest\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\ondra\source\repos\UkazkovyTest\UkazkovyTest\bin\Debug\net10.0-windows\Model\MessageDatabase2.xml
