@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Xml.Schema;
@@ -13,16 +15,29 @@ namespace UkazkovyTest.Converters
 {
     public class BtnValueConverter : IMultiValueConverter
     {
-        //Obrvuje tlačítko pokud zpráva, kterou přijimá nemá Receive Time na červeno a pokud má tak opět na modrou
-        //Momentalně blbne Uživatel A, který je pro ostatní neustále červený
+        // Zmena tlačítka podle toho zda existuje zprava pro uživatele od jiného uživatele bez času přečtení
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length < 2 || values[0] is not int id || values[1] is not ObservableCollection<Message> messages)
+
+
+            if (values.Length < 2)
+                return Brushes.Blue;
+
+            if (values[0] == DependencyProperty.UnsetValue ||
+                values[1] == DependencyProperty.UnsetValue)
+                return Brushes.Blue;
+
+            int id = System.Convert.ToInt32(values[0]);
+            var messages = values[1] as IEnumerable<Message>;
+
+            Debug.WriteLine($"Converter called for ID={id}");
+            if (messages == null)
                 return Brushes.Blue;
 
             bool hasUnread = messages.Any(m => m.ReceiverId == id && m.ReceiveTime == null);
             return hasUnread ? Brushes.Red : Brushes.Blue;
         }
+
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessageDatabase>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime>06.02.2026 22:23:55</ReceiveTime>
+    <MessageContent>Ahoj</MessageContent>
+    <SenderId>2</SenderId>
+    <ReceiverId>1</ReceiverId>
+  </Message>
+  <Message>
+    <SentTime></SentTime>
+    <ReceiveTime>06.02.2026 22:23:35</ReceiveTime>
+    <MessageContent>Ahoj</MessageContent>
+    <SenderId>1</SenderId>
+    <ReceiverId>2</ReceiverId>
+  </Message>
+  <Message>
+    <SenderId>3</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>xx</MessageContent>
+    <SentTime>2026-02-06T22:24:19.3830397+01:00</SentTime>
+    <ReceiveTime>06.02.2026 22:24:42</ReceiveTime>
+  </Message>
+</MessageDatabase>

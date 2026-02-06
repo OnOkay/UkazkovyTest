@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <UserDatabase>
 	<User>
-		<id>0</id>
-		<name>A</name>
-		<surname>A</surname>
-		<email>A</email>
-		<username>A</username>
-		<password>A</password>
-	</User>
-	<User>
 		<id>1</id>
 		<name>Tomáš</name>
 		<surname>Rychlý</surname>
@@ -47,5 +39,13 @@
 		<email>VAna@seznam.cz</email>
 		<username>Vana</username>
 		<password>JeHorká</password>
+	</User>
+	<User>
+		<id>6</id>
+		<name>A</name>
+		<surname>A</surname>
+		<email>A</email>
+		<username>A</username>
+		<password>A</password>
 	</User>
 </UserDatabase>

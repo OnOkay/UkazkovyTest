@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/messagedatabase.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/messagedatabase2.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/messagedatabase3.xml")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("model/userdatabase.xml")]
 
 

@@ -48,7 +48,7 @@ namespace UkazkovyTest.Model
 
 
 
-        public static string relativePath = @"Model\MessageDatabase2.xml";
+        public static string relativePath = @"Model\MessageDatabase3.xml";
         public static string absolutePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
         public static ObservableCollection<Message> _MessageDatabase = ReadDB(absolutePath);
 
