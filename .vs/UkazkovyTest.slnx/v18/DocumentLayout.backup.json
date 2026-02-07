@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\model\\userdatabase.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\model\\userdatabase.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\model\\messagedatabase3.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\model\\messagedatabase3.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\model\\messagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\model\\messagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\model\\messagedatabase2.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\model\\messagedatabase2.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\converters\\btnvalueconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\converters\\btnvalueconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,6 +13,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\model\\userdatabase.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\model\\userdatabase.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\model\\messagedatabase3.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\model\\messagedatabase3.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|c:\\users\\ondra\\source\\repos\\ukazkovytest\\ukazkovytest\\model\\messagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9F53A0D-7AD6-A0E1-F840-072627E4D32D}|UkazkovyTest\\UkazkovyTest.csproj|solutionrelative:ukazkovytest\\model\\messagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +38,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "MessageManager.cs",
               "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Model\\MessageManager.cs",
               "RelativeDocumentMoniker": "UkazkovyTest\\Model\\MessageManager.cs",
@@ -54,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "MessageDatabase3.xml",
               "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Model\\MessageDatabase3.xml",
               "RelativeDocumentMoniker": "UkazkovyTest\\Model\\MessageDatabase3.xml",
@@ -66,31 +62,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MessageDatabase2.xml",
-              "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Model\\MessageDatabase2.xml",
-              "RelativeDocumentMoniker": "UkazkovyTest\\Model\\MessageDatabase2.xml",
-              "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Model\\MessageDatabase2.xml",
-              "RelativeToolTip": "UkazkovyTest\\Model\\MessageDatabase2.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-02-06T21:08:52.999Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "MainWindowModel.cs",
               "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\ViewModel\\MainWindowModel.cs",
               "RelativeDocumentMoniker": "UkazkovyTest\\ViewModel\\MainWindowModel.cs",
               "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\ViewModel\\MainWindowModel.cs",
               "RelativeToolTip": "UkazkovyTest\\ViewModel\\MainWindowModel.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAALwAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAowKoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T21:12:47.203Z"
+              "WhenOpened": "2026-02-06T21:12:47.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UserDatabase.xml",
               "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Model\\UserDatabase.xml",
               "RelativeDocumentMoniker": "UkazkovyTest\\Model\\UserDatabase.xml",
@@ -98,31 +83,32 @@
               "RelativeToolTip": "UkazkovyTest\\Model\\UserDatabase.xml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-02-06T12:16:38.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-06T12:16:38.728Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "BtnValueConverter.cs",
               "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Converters\\BtnValueConverter.cs",
               "RelativeDocumentMoniker": "UkazkovyTest\\Converters\\BtnValueConverter.cs",
               "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\Converters\\BtnValueConverter.cs",
               "RelativeToolTip": "UkazkovyTest\\Converters\\BtnValueConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAACWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-06T11:34:04.825Z"
+              "WhenOpened": "2026-02-06T11:34:04.825Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\MainWindow.xaml",
               "RelativeDocumentMoniker": "UkazkovyTest\\View\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\ondra\\source\\repos\\UkazkovyTest\\UkazkovyTest\\View\\MainWindow.xaml",
               "RelativeToolTip": "UkazkovyTest\\View\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-06T10:09:21.82Z"
+              "WhenOpened": "2026-02-06T10:09:21.82Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -24,17 +24,21 @@ namespace UkazkovyTest.Converters
                 return Brushes.Blue;
 
             if (values[0] == DependencyProperty.UnsetValue ||
-                values[1] == DependencyProperty.UnsetValue)
+                values[1] == DependencyProperty.UnsetValue ||
+                values[2] == DependencyProperty.UnsetValue)
                 return Brushes.Blue;
 
             int id = System.Convert.ToInt32(values[0]);
             var messages = values[1] as IEnumerable<Message>;
+            var activeUser = values[2] as User;
 
-            Debug.WriteLine($"Converter called for ID={id}");
+            if (activeUser == null)
+                return Brushes.Blue;
+
             if (messages == null)
                 return Brushes.Blue;
 
-            bool hasUnread = messages.Any(m => m.ReceiverId == id && m.ReceiveTime == null);
+            bool hasUnread = messages.Any(m => m.ReceiverId == id && m.ReceiveTime == null && m.SenderId == activeUser.id);
             return hasUnread ? Brushes.Red : Brushes.Blue;
         }
 

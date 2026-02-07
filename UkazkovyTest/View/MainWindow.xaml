@@ -51,6 +51,7 @@
                                 <MultiBinding Converter="{StaticResource BtnValueConverter}">
                                     <Binding Path="id"/>
                                     <Binding Path="DataContext.Messages" RelativeSource="{RelativeSource AncestorType=Window}"/>
+                                    <Binding Path="DataContext.ActiveUser" RelativeSource="{RelativeSource AncestorType=Window}"/>
                                 </MultiBinding>
                             </Button.Background>
                         </Button>
