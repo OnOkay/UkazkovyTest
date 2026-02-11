@@ -3,19 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:PW="clr-namespace:UkazkovyTest.Components"
         xmlns:local="clr-namespace:UkazkovyTest.View"
         mc:Ignorable="d"
         Title="Login" Height="233" Width="291"
         DataContext="{Binding LoginWindow}">
+    <Window.Resources>
+        <PW:PasswordUserControl x:Key="PasswordUserControl"/>
+    </Window.Resources>
     <Grid>
-        <TextBox Name="UsernameBox" HorizontalAlignment="Left" Margin="50,83,0,0" TextWrapping="Wrap" Text="{Binding UserNameBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="178"/>
         <!--Tlačítko Quit vypíná celou aplikaci | Tlačítko login Zkontroluje zda jsou údaje spravně a vpustí uživatele dál. Jinak Se zobrazí label, že se něco napsalo špatně-->
-        <Button Command="{Binding QuitAppCommand}" Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="23,173,0,0" VerticalAlignment="Top"/>
-        <Button Command="{Binding ShowWindowCommand}" Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="240,173,0,0" VerticalAlignment="Top" Click="LoginButton_Click"/>
-        <TextBox Name="PasswordBox" HorizontalAlignment="Left" Margin="50,125,0,0" TextWrapping="Wrap" Text="{Binding PasswordBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="178"/>
-        <Label Content="{Binding MistakeAnswer, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="23,36,0,0" VerticalAlignment="Top" Height="29"/>
-        <Label Content="Please enter your username and password&#xD;&#xA;" HorizontalAlignment="Left" Margin="23,7,0,0" VerticalAlignment="Top" Height="29"/>
-        <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="107,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393" Height="24"/>
-        <Label Content="Password&#xA;" HorizontalAlignment="Left" Margin="107,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.295,0.393" Height="24"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Content="Please enter your username and password" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="Username" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="UsernameBox" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150"  TextWrapping="Wrap" Text="{Binding UserNameBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="2" Grid.Column="1" Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24"/>
+
+        <PW:PasswordUserControl Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Password="{Binding PasswordBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Grid.Row="3" Grid.Column="0" Command="{Binding QuitAppCommand}" Name="QuitButton" Content="Quit" HorizontalAlignment="Center" Margin="5" Height="25"/>
+        <Label Grid.Row="3" Grid.Column="1" Content="{Binding MistakeAnswer, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29"/>
+        <Button Grid.Row="3" Grid.Column="2" Command="{Binding ShowWindowCommand}" Name="LoginButton" Content="Login" HorizontalAlignment="Center" Margin="5" Height="25"/>
     </Grid>
 </Window>

@@ -72,13 +72,14 @@ namespace UkazkovyTest.ViewModel
         //Po kontrole bud otevre nove okno a zavre sebe nebo zobrazi ze se stala chyba
         public void ShowWindow(object obj)
         {
+            bool Correct = false;
             foreach (User user in Users)
             {
                 if (UserNameBox == user.username)
                 {
                     if (PasswordBox == user.password)
                     {
-
+                        Correct = true;
                         MainWindow main = new MainWindow(user);
                         Application.Current.MainWindow = main;
                         main.Show();
@@ -87,7 +88,10 @@ namespace UkazkovyTest.ViewModel
                     }
                 }
             }
-            MistakeAnswer = "Incorrect password or username";
+            if (!Correct)
+            {
+                MistakeAnswer = "Incorrect password or username";
+            }
         }
     }
 }
