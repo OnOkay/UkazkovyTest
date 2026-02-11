@@ -1,3 +1,4 @@
 App
-bin/
-obj/
+UkazkovyTest/bin/
+UkazkovyTest/obj/
+.vs
