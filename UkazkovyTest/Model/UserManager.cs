@@ -21,12 +21,12 @@ namespace UkazkovyTest.Model
                 .Elements("User")
                 .Select(x => new User
                 {
-                    name = (string)x.Element("name"),
-                    surname = (string)x.Element("surname"),
-                    id = (int?)x.Element("id") ?? 0,
-                    username = (string)x.Element("username"),
-                    email = (string)x.Element("email"),
-                    password = (string)x.Element("password")
+                    Name = (string)x.Element("name"),
+                    Surname = (string)x.Element("surname"),
+                    Id = (int?)x.Element("id") ?? 0,
+                    Username = (string)x.Element("username"),
+                    Email = (string)x.Element("email"),
+                    Password = (string)x.Element("password")
                 });
 
             return new ObservableCollection<User>(users);

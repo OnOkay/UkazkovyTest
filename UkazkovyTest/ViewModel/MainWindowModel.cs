@@ -58,7 +58,7 @@ namespace UkazkovyTest.ViewModel
             }
         }
         public int TextLength => string.IsNullOrEmpty(SendContent) ? 0 : SendContent.Length;
-        public bool CanClickButton => !string.IsNullOrEmpty(SendContent) || SendContent.Length > 255;
+        public bool CanClickButton => !string.IsNullOrEmpty(SendContent) && SendContent.Length < 255;
 
 
         //Proměná která určuje s kým momentálně uživatel komunikuje
@@ -106,7 +106,7 @@ namespace UkazkovyTest.ViewModel
 
             ChangeReceiverCommand = new RelayCommand(ChangeReceiver, CanChangeReceiver);
 
-            MessageManager.SetReceiveTime(ActiveUser.id, ActiveReceiver.id);
+            MessageManager.SetReceiveTime(ActiveUser.Id, ActiveReceiver.Id);
         }
 
         public bool CanSendMessage(object obj)
@@ -117,7 +117,7 @@ namespace UkazkovyTest.ViewModel
         //Tvorba nové zprávy a aktulizace UI
         public void SendMessage(object obj)
         {
-            MessageManager.NewMessage(SendContent, ActiveUser.id, ActiveReceiver.id);
+            MessageManager.NewMessage(SendContent, ActiveUser.Id, ActiveReceiver.Id);
             UpdateUserMessages();
             FiltredMessages.Refresh();
             SendContent = "";
@@ -139,10 +139,10 @@ namespace UkazkovyTest.ViewModel
             {
                 foreach (User user in Users)
                 {
-                    if (parametr is int value && value == user.id)
+                    if (parametr is int value && value == user.Id)
                     {
                         ActiveReceiver = user;
-                        MessageManager.SetReceiveTime(ActiveUser.id, ActiveReceiver.id);
+                        MessageManager.SetReceiveTime(ActiveUser.Id, ActiveReceiver.Id);
                         UpdateUserMessages();
                         FiltredMessages.Refresh();
 
@@ -159,8 +159,8 @@ namespace UkazkovyTest.ViewModel
             var msg = obj as UserMessage;
             if (msg == null) return false;
 
-            return ((msg.SenderId == ActiveUser.id && msg.ReceiverId == ActiveReceiver.id) ||
-                    (msg.SenderId == ActiveReceiver.id && msg.ReceiverId == ActiveUser.id));
+            return ((msg.SenderId == ActiveUser.Id && msg.ReceiverId == ActiveReceiver.Id) ||
+                    (msg.SenderId == ActiveReceiver.Id && msg.ReceiverId == ActiveUser.Id));
         }
 
         //Spojuje Messages a Usery. Je později filtrovaná
@@ -178,17 +178,17 @@ namespace UkazkovyTest.ViewModel
 
                 string jmeno = "Chyba";
 
-                if (m.ReceiverId == ActiveUser.id)
+                if (m.ReceiverId == ActiveUser.Id)
                 {
-                    jmeno = ActiveUser.username ?? "Chyba";
+                    jmeno = ActiveUser.Username ?? "Chyba";
                 }
                 else
                 {
                     foreach (User user in Users)
                     {
-                        if (user != null && m.ReceiverId == user.id)
+                        if (user != null && m.ReceiverId == user.Id)
                         {
-                            jmeno = user.username ?? "Chyba";
+                            jmeno = user.Username ?? "Chyba";
                             break;
                         }
                     }

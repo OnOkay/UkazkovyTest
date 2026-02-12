@@ -59,13 +59,13 @@ namespace UkazkovyTest.Model
         }
 
         //Tvorba nové zprávy
-        public static void NewMessage(string Text, int R, int S)
+        public static void NewMessage(string Text, int S, int R)
         {
             Message message = new Message();
             message.SendTime = DateTime.Now;
             message.MessageContent = Text;
-            message.ReceiverId = R;
-            message.SenderId = S;
+            message.ReceiverId = S;
+            message.SenderId = R;
             _MessageDatabase.Add(message);
             AddMessage(absolutePath, message);
         }

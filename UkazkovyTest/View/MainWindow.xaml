@@ -10,31 +10,43 @@
     <Window.Resources>
         <conv:BtnValueConverter x:Key="BtnValueConverter"/>
     </Window.Resources>
-    <Grid Margin="0,0,0,1">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
         <!--Tlačítko bere obsah textboxu a tvoří z něj novou zprávu Zpráva musí být 255>x>0-->
-        <Button Command ="{Binding SendMessageCommand}" IsEnabled="{Binding CanClickButton}" Name="SendButton" Content="Send" HorizontalAlignment="Left" Margin="658,375,0,0" VerticalAlignment="Top" Height="28" Width="49"/>
-        <TextBox Text="{Binding SendContent, UpdateSourceTrigger=PropertyChanged}" Name="MessageBox" HorizontalAlignment="Left" Margin="262,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" Height="28"/>
-        <Label Content="Users" HorizontalAlignment="Left" Margin="81,24,0,0" VerticalAlignment="Top" Width="41" RenderTransformOrigin="-0.464,2.321"/>
-        <Rectangle  HorizontalAlignment="Left" Height="34" Margin="263,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="249" Fill="#FF618AA5"/>
-        <Rectangle  HorizontalAlignment="Left" Height="34" Margin="510,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="249" Fill="#FF2FC87E"/>
-        <Label Name="ActiveReciever" Content="{Binding ActiveReceiver.surname, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="597,43,0,0" VerticalAlignment="Top"/>
-        <Label Name="ActiveUser" Content="{Binding ActiveUser.surname, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="362,43,0,0" VerticalAlignment="Top"/>
+        <!--Upravit cele mozna na menu cast aby se to stackovalo na sebe?-->
+        <Button Grid.Column="3" Grid.Row="2" Command ="{Binding SendMessageCommand}" IsEnabled="{Binding CanClickButton}" Name="SendButton" Content="Send" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,50,0"/>
+        <TextBox Grid.Column="3" Grid.Row="2" Text="{Binding SendContent, UpdateSourceTrigger=PropertyChanged}" Name="MessageBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Height="25" Width="350"/>
+        <Label Grid.Column="1" Grid.Row="1" Content="Users" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Grid.Column="3" Grid.Row="2" Content="{Binding TextLength}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,25,0"/>
+        <Label Grid.Column="3" Grid.Row="2" Content="/ 255" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
         <!--Tabule zpráv, vypisuje zprávy 2 aktivních uživatelů-->
         <ListView SelectionMode="Single"
-            ItemsSource="{Binding FiltredMessages}" Margin="263,93,41,64">
+            ItemsSource="{Binding FiltredMessages}" Grid.Column="3" Grid.Row="1">
             <ListView.View>
                 <GridView >
-                    <GridViewColumn Header="Kdy" DisplayMemberBinding="{Binding SendTime}" />
-                    <GridViewColumn Header="Poslal" DisplayMemberBinding="{Binding Username}" />
-                    <GridViewColumn Header="Zprava" DisplayMemberBinding="{Binding MessageContent}" />
-                    <GridViewColumn Header="Videl" DisplayMemberBinding="{Binding ReceiveTime}" />
-
+                    <GridViewColumn Header="When" DisplayMemberBinding="{Binding SendTime}" />
+                    <GridViewColumn Header="Send" DisplayMemberBinding="{Binding Username}" />
+                    <GridViewColumn Header="Message" DisplayMemberBinding="{Binding MessageContent}" />
+                    <GridViewColumn Header="Seen" DisplayMemberBinding="{Binding ReceiveTime}" />
                 </GridView>
             </ListView.View>
         </ListView>
+
         <!--Seznam uživatelů tlačítek, zapomoci konverteru zobrazují nové zprávy (Uživatel A je chybny) a tlačítkem přemeuje aktivního příjemce-->
-        <ScrollViewer Margin="10,55,602,44">
+        <ScrollViewer Grid.Column="1" Grid.Row="1" Margin="0,25,0,0">
             <ItemsControl ItemsSource="{Binding BtnUsers}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -44,12 +56,12 @@
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Button Content="{Binding username}"
+                        <Button Content="{Binding Username}"
                                 Command="{Binding DataContext.ChangeReceiverCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                CommandParameter="{Binding id}">
+                                CommandParameter="{Binding Id}">
                             <Button.Background>
                                 <MultiBinding Converter="{StaticResource BtnValueConverter}">
-                                    <Binding Path="id"/>
+                                    <Binding Path="Id"/>
                                     <Binding Path="DataContext.Messages" RelativeSource="{RelativeSource AncestorType=Window}"/>
                                     <Binding Path="DataContext.ActiveUser" RelativeSource="{RelativeSource AncestorType=Window}"/>
                                 </MultiBinding>
@@ -59,9 +71,6 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-        <Label Content="{Binding TextLength}" HorizontalAlignment="Left" Margin="712,377,0,0" VerticalAlignment="Top"/>
-        <Label Content="/ 255" HorizontalAlignment="Left" Margin="727,377,0,0" VerticalAlignment="Top"/>
-
 
     </Grid>
 </Window>

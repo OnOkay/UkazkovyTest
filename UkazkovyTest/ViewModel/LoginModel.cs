@@ -75,9 +75,9 @@ namespace UkazkovyTest.ViewModel
             bool Correct = false;
             foreach (User user in Users)
             {
-                if (UserNameBox == user.username)
+                if (UserNameBox == user.Username)
                 {
-                    if (PasswordBox == user.password)
+                    if (PasswordBox == user.Password)
                     {
                         Correct = true;
                         MainWindow main = new MainWindow(user);

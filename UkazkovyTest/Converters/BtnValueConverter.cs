@@ -38,7 +38,7 @@ namespace UkazkovyTest.Converters
             if (messages == null)
                 return Brushes.Blue;
 
-            bool hasUnread = messages.Any(m => m.ReceiverId == id && m.ReceiveTime == null && m.SenderId == activeUser.id);
+            bool hasUnread = messages.Any(m => m.ReceiverId == activeUser.Id && m.ReceiveTime == null && m.SenderId == id);
             return hasUnread ? Brushes.Red : Brushes.Blue;
         }
 
