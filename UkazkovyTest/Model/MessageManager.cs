@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Controls;
@@ -29,28 +30,38 @@ namespace UkazkovyTest.Model
         //Čte XML dB
         public static ObservableCollection<Message> ReadDB(string path)
         {
-            XDocument doc = XDocument.Load(path);
+            try
+            {
+                XDocument doc = XDocument.Load(path);
 
-            var messages = doc.Root
-                .Elements("Message")
-                .Select(x => new Message
-                {
-                    SendTime = ParseDate(x.Element("SentTime")) ?? DateTime.MinValue,
-                    ReceiveTime = ParseDate(x.Element("ReceiveTime")),
-                    MessageContent = (string)x.Element("MessageContent"),
-                    SenderId = (int?)x.Element("SenderId") ?? 0,
-                    ReceiverId = (int?)x.Element("ReceiverId") ?? 1,
+                var messages = doc.Root
+                    .Elements("Message")
+                    .Select(x => new Message
+                    {
+                        SendTime = ParseDate(x.Element("SentTime")) ?? DateTime.MinValue,
+                        ReceiveTime = ParseDate(x.Element("ReceiveTime")),
+                        MessageContent = (string)x.Element("MessageContent"),
+                        SenderId = (int?)x.Element("SenderId") ?? 0,
+                        ReceiverId = (int?)x.Element("ReceiverId") ?? 1,
 
-                });
+                    });
+                return new ObservableCollection<Message>(messages);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return new ObservableCollection<Message>();
+            }
 
-            return new ObservableCollection<Message>(messages);
         }
 
 
 
         public static string relativePath = @"Model\MessageDatabase3.xml";
         public static string absolutePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-        public static ObservableCollection<Message> _MessageDatabase = ReadDB(absolutePath);
+        //Vyzkousime
+        public static string path = Path.Combine(AppContext.BaseDirectory, "MessageDatabase.xml");
+        public static ObservableCollection<Message> _MessageDatabase = ReadDB(path);
 
         public static ObservableCollection<Message> GetMessages()
         {
@@ -64,21 +75,22 @@ namespace UkazkovyTest.Model
             Message message = new Message();
             message.SendTime = DateTime.Now;
             message.MessageContent = Text;
-            message.ReceiverId = S;
-            message.SenderId = R;
+            message.ReceiverId = R;
+            message.SenderId = S;
             _MessageDatabase.Add(message);
-            AddMessage(absolutePath, message);
+            AddMessage(path, message);
         }
 
         //Zmena casu doruceni
         public static void SetReceiveTime(int S, int R)
         {
+            //Ted je to spravne ale musel jsem je prohodit
             foreach(Message message in _MessageDatabase)
             {
-                if((message.ReceiverId == R && message.SenderId == S)&&(message.ReceiveTime==null))
+                if((message.ReceiverId == S && message.SenderId == R)&&(message.ReceiveTime==null))
                 {
                     message.ReceiveTime = DateTime.Now;
-                    SetXMLReceive(absolutePath, R, S);
+                    SetXMLReceive(path, R, S);
                 }
             }
         }

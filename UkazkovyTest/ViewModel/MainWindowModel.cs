@@ -174,25 +174,26 @@ namespace UkazkovyTest.ViewModel
 
             foreach (Message m in Messages)
             {
+                //*
                 if (m == null) continue;
 
                 string jmeno = "Chyba";
 
-                if (m.ReceiverId == ActiveUser.Id)
+       
+                foreach (User user in Users)
                 {
-                    jmeno = ActiveUser.Username ?? "Chyba";
-                }
-                else
-                {
-                    foreach (User user in Users)
+                    if (user != null && m.SenderId == ActiveUser.Id)
                     {
-                        if (user != null && m.ReceiverId == user.Id)
-                        {
-                            jmeno = user.Username ?? "Chyba";
-                            break;
-                        }
+                        jmeno = ActiveUser.Username;
+                        break;
+                    }
+                    else if (user != null && m.SenderId == user.Id)
+                    {
+                        jmeno = user.Username ?? "Chyba";
+                        break;
                     }
                 }
+                
 
                 displayList.Add(new UserMessage
                 {

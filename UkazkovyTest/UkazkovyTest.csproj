@@ -9,14 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Model\MessageDatabase3.xml" />
     <None Remove="Model\UserDatabase.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Model\MessageDatabase3.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Model\UserDatabase.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
