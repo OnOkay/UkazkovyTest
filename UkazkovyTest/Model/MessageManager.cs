@@ -30,10 +30,10 @@ namespace UkazkovyTest.Model
         //Čte XML dB
         public static ObservableCollection<Message> ReadDB(string path)
         {
+            
             try
             {
                 XDocument doc = XDocument.Load(path);
-
                 var messages = doc.Root
                     .Elements("Message")
                     .Select(x => new Message
@@ -55,13 +55,8 @@ namespace UkazkovyTest.Model
 
         }
 
-
-
-        public static string relativePath = @"Model\MessageDatabase3.xml";
-        public static string absolutePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-        //Vyzkousime
-        public static string path = Path.Combine(AppContext.BaseDirectory, "MessageDatabase.xml");
-        public static ObservableCollection<Message> _MessageDatabase = ReadDB(path);
+        public static string FilePath = @"..\..\..\Model\MessageDatabase.xml";
+        public static ObservableCollection<Message> _MessageDatabase = ReadDB(FilePath);
 
         public static ObservableCollection<Message> GetMessages()
         {
@@ -74,14 +69,16 @@ namespace UkazkovyTest.Model
         {
             Message message = new Message();
             message.SendTime = DateTime.Now;
+            message.ReceiveTime = null;
             message.MessageContent = Text;
             message.ReceiverId = R;
             message.SenderId = S;
             _MessageDatabase.Add(message);
-            AddMessage(path, message);
+            AddMessage(FilePath, message);
         }
 
         //Zmena casu doruceni
+        //ActiveUser a Receiver
         public static void SetReceiveTime(int S, int R)
         {
             //Ted je to spravne ale musel jsem je prohodit
@@ -90,7 +87,7 @@ namespace UkazkovyTest.Model
                 if((message.ReceiverId == S && message.SenderId == R)&&(message.ReceiveTime==null))
                 {
                     message.ReceiveTime = DateTime.Now;
-                    SetXMLReceive(path, R, S);
+                    SetXMLReceive(FilePath, R, S);
                 }
             }
         }
@@ -125,6 +122,7 @@ namespace UkazkovyTest.Model
             doc.Save(filePath);
         }
 
+        //Receiver a Active User
         public static void SetXMLReceive(string filePath, int R, int S)
         {
             XDocument doc;
@@ -136,18 +134,19 @@ namespace UkazkovyTest.Model
                 var timeElement = message.Element("ReceiveTime");
                 string newTime = DateTime.Now.ToString();
 
-                if (rElement != null && sElement != null && timeElement != null)
+                if (rElement != null && sElement != null && timeElement != null )
                 {
                     int r = int.Parse(rElement.Value);
                     int s = int.Parse(sElement.Value);
 
-                    if (r == R && s == S && string.IsNullOrEmpty(timeElement.Value))
+                    //Chyba byla zde zase obrácené
+                    if (r == S && s == R && string.IsNullOrEmpty(timeElement.Value))
                     {
-                        timeElement.Value = newTime.ToString();
+                        timeElement.Value = newTime;
                     }
                 }
             }
-            doc.Save(absolutePath);
+            doc.Save(filePath);
         }
 
             

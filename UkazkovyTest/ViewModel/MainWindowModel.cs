@@ -25,10 +25,10 @@ namespace UkazkovyTest.ViewModel
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
 
-        public ObservableCollection<UserMessage> UserMessages { get; set; }
-        public ObservableCollection<User> Users { get; set; }
-        public ObservableCollection<User> BtnUsers { get; set; }
-        public ObservableCollection<Message> Messages { get; set; }
+        public ObservableCollection<UserMessage> UserMessages { get; private set; }
+        public ObservableCollection<User> Users { get; private set; }
+        public ObservableCollection<User> BtnUsers { get; private set; }
+        public ObservableCollection<Message> Messages { get; private set; }
 
         //Zpravovy filtr aby ukazoval pouze 2 spolu komunikujici osoby
         public ICollectionView FiltredMessages { get; set; }
