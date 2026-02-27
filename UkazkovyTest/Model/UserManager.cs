@@ -39,9 +39,9 @@ namespace UkazkovyTest.Model
             }
         }
 
-        public static string relativePath = @"Model\UserDatabase.xml";
-        public static string absolutePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-        public static ObservableCollection<User> _UserDatabase = ReadDB(absolutePath);
+
+        public static string FilePath = @"..\..\..\Model\UserDatabase.xml";
+        public static ObservableCollection<User> _UserDatabase = ReadDB(FilePath);
       
 
         public static ObservableCollection<User> GetUsers()

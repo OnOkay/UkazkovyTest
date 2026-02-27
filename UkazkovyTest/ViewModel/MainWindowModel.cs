@@ -24,7 +24,7 @@ namespace UkazkovyTest.ViewModel
         protected void OnPropertyChanged([CallerMemberName] string name = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-
+        public MessageManager MessageManagerX { get; set; }
         public ObservableCollection<UserMessage> UserMessages { get; private set; }
         public ObservableCollection<User> Users { get; private set; }
         public ObservableCollection<User> BtnUsers { get; private set; }
@@ -79,7 +79,7 @@ namespace UkazkovyTest.ViewModel
         {
             SendContent = "";
             Users = UserManager.GetUsers();
-            BtnUsers = UserManager.GetUsers();
+            BtnUsers = new ObservableCollection<User>(Users);
             BtnUsers.Remove(acitiveUser);
             Messages = MessageManager.GetMessages();
             

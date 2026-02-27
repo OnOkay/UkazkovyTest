@@ -60,7 +60,6 @@ namespace UkazkovyTest.Model
 
         public static ObservableCollection<Message> GetMessages()
         {
-
             return _MessageDatabase;
         }
 
@@ -78,7 +77,6 @@ namespace UkazkovyTest.Model
         }
 
         //Zmena casu doruceni
-        //ActiveUser a Receiver
         public static void SetReceiveTime(int S, int R)
         {
             //Ted je to spravne ale musel jsem je prohodit
@@ -87,7 +85,7 @@ namespace UkazkovyTest.Model
                 if((message.ReceiverId == S && message.SenderId == R)&&(message.ReceiveTime==null))
                 {
                     message.ReceiveTime = DateTime.Now;
-                    SetXMLReceive(FilePath, R, S);
+                    SetXMLReceive(FilePath, S, R);
                 }
             }
         }
@@ -123,7 +121,7 @@ namespace UkazkovyTest.Model
         }
 
         //Receiver a Active User
-        public static void SetXMLReceive(string filePath, int R, int S)
+        public static void SetXMLReceive(string filePath, int S, int R)
         {
             XDocument doc;
             doc = XDocument.Load(filePath);
@@ -139,8 +137,7 @@ namespace UkazkovyTest.Model
                     int r = int.Parse(rElement.Value);
                     int s = int.Parse(sElement.Value);
 
-                    //Chyba byla zde zase obrácené
-                    if (r == S && s == R && string.IsNullOrEmpty(timeElement.Value))
+                    if (r == R && s == S && string.IsNullOrEmpty(timeElement.Value))
                     {
                         timeElement.Value = newTime;
                     }

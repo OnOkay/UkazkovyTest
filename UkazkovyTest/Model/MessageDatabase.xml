@@ -14,4 +14,11 @@
     <SenderId>2</SenderId>
     <ReceiverId>1</ReceiverId>
   </Message>
+  <Message>
+    <SenderId>6</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-27T13:57:07.7058693+01:00</SentTime>
+    <ReceiveTime />
+  </Message>
 </MessageDatabase>
