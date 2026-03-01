@@ -19,6 +19,7 @@ namespace UkazkovyTest.ViewModel
     public class LoginModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        private readonly UserInterface _userInterface;
         protected void OnPropertyChanged([CallerMemberName] string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         public ObservableCollection<User> Users { get; set; }
         public ICommand ShowWindowCommand { get; set; }
@@ -42,9 +43,11 @@ namespace UkazkovyTest.ViewModel
         public event Action RequestClose;
 
         
-        public LoginModel()
+        public LoginModel(UserInterface userInterface)
         {
-            Users = UserManager.GetUsers();
+            _userInterface = userInterface;
+            Users = _userInterface.GetUsers();
+            //Users = UserManager.GetUsers();
 
             ShowWindowCommand = new RelayCommand(ShowWindow, CanShowWindow);
 

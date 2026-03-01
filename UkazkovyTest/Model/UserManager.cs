@@ -6,13 +6,25 @@ using System.Reflection;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
+using UkazkovyTest.ViewModel;
 
 
 namespace UkazkovyTest.Model
 {
-    class UserManager
+    class UserManager : UserInterface
     {
         //Usermanager pouze cte z databaze a predava data oboum ViewModelum
+
+
+        private readonly string _filePath;
+        private ObservableCollection<User> _database;
+
+        public UserManager(string filePath)
+        {
+            _filePath = filePath;
+            _database = ReadDB(_filePath);
+        }
+
         public static ObservableCollection<User> ReadDB (string path)
         {
             try
@@ -44,11 +56,13 @@ namespace UkazkovyTest.Model
         public static ObservableCollection<User> _UserDatabase = ReadDB(FilePath);
       
 
-        public static ObservableCollection<User> GetUsers()
+        
+        public ObservableCollection<User> GetUsers()
         {
             
             return _UserDatabase;
         }
+        
 
     }
 }

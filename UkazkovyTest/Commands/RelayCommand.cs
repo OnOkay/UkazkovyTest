@@ -33,5 +33,10 @@ namespace UkazkovyTest.Commands
 
             _Execute(parameter);
         }
+
+        public void RaiseCanExecuteChanged() 
+        {
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

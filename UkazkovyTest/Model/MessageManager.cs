@@ -7,15 +7,27 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Xml.Linq;
+using UkazkovyTest.ViewModel;
 
 namespace UkazkovyTest.Model
 {
-    class MessageManager
+    class MessageManager : MessageInterface
     {
         //Message manage čte a zapisuje XML soubour
         //následně předává do MainWindow ViewModelu
 
+        private readonly string _filePath;
+        private ObservableCollection<Message> _database;
 
+        public MessageManager(string filePath)
+        {
+            _filePath = filePath;
+            _database = ReadDB(_filePath);
+        }
+
+        public ObservableCollection<Message> GetMessages() => _database;
+
+        //TEST
         private static DateTime? ParseDate(XElement element)
         {
             if (element == null)
@@ -57,14 +69,14 @@ namespace UkazkovyTest.Model
 
         public static string FilePath = @"..\..\..\Model\MessageDatabase.xml";
         public static ObservableCollection<Message> _MessageDatabase = ReadDB(FilePath);
-
-        public static ObservableCollection<Message> GetMessages()
+        /*
+        public ObservableCollection<Message> GetMessages()
         {
             return _MessageDatabase;
         }
-
+        */
         //Tvorba nové zprávy
-        public static void NewMessage(string Text, int S, int R)
+        public void NewMessage(string Text, int S, int R)
         {
             Message message = new Message();
             message.SendTime = DateTime.Now;
@@ -72,20 +84,21 @@ namespace UkazkovyTest.Model
             message.MessageContent = Text;
             message.ReceiverId = R;
             message.SenderId = S;
-            _MessageDatabase.Add(message);
+            //_MessageDatabase.Add(message);
+            _database.Add(message);
             AddMessage(FilePath, message);
         }
 
         //Zmena casu doruceni
-        public static void SetReceiveTime(int S, int R)
+        public void SetReceiveTime(int S, int R)
         {
             //Ted je to spravne ale musel jsem je prohodit
-            foreach(Message message in _MessageDatabase)
+            foreach(Message message in _database)
             {
                 if((message.ReceiverId == S && message.SenderId == R)&&(message.ReceiveTime==null))
                 {
                     message.ReceiveTime = DateTime.Now;
-                    SetXMLReceive(FilePath, S, R);
+                    SetXMLReceive(FilePath, R, S);
                 }
             }
         }

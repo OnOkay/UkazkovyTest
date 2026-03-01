@@ -19,6 +19,48 @@
     <ReceiverId>2</ReceiverId>
     <MessageContent>A</MessageContent>
     <SentTime>2026-02-27T13:57:07.7058693+01:00</SentTime>
-    <ReceiveTime />
+    <ReceiveTime>27.02.2026 18:21:44</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>6</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>X</MessageContent>
+    <SentTime>2026-02-27T18:23:43.2673408+01:00</SentTime>
+    <ReceiveTime>27.02.2026 18:23:56</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>6</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>S</MessageContent>
+    <SentTime>2026-02-27T19:49:15.4582147+01:00</SentTime>
+    <ReceiveTime>27.02.2026 20:02:46</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>6</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>D</MessageContent>
+    <SentTime>2026-02-27T19:49:18.4130703+01:00</SentTime>
+    <ReceiveTime>27.02.2026 20:02:46</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>6</SenderId>
+    <ReceiverId>1</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-27T19:58:09.439434+01:00</SentTime>
+    <ReceiveTime>27.02.2026 19:58:43</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>6</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>A</MessageContent>
+    <SentTime>2026-02-27T19:58:32.8899783+01:00</SentTime>
+    <ReceiveTime>27.02.2026 20:02:46</ReceiveTime>
+  </Message>
+  <Message>
+    <SenderId>6</SenderId>
+    <ReceiverId>2</ReceiverId>
+    <MessageContent>X</MessageContent>
+    <SentTime>2026-02-27T20:02:32.3140846+01:00</SentTime>
+    <ReceiveTime>27.02.2026 20:02:46</ReceiveTime>
   </Message>
 </MessageDatabase>

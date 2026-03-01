@@ -24,7 +24,8 @@ namespace UkazkovyTest.ViewModel
         protected void OnPropertyChanged([CallerMemberName] string name = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-        public MessageManager MessageManagerX { get; set; }
+        private readonly MessageInterface _messageInterface;
+        private readonly UserInterface _userInterface;
         public ObservableCollection<UserMessage> UserMessages { get; private set; }
         public ObservableCollection<User> Users { get; private set; }
         public ObservableCollection<User> BtnUsers { get; private set; }
@@ -51,14 +52,17 @@ namespace UkazkovyTest.ViewModel
                 if (_SendContent != value)
                 {
                     _SendContent = value;
+
+                    
                     OnPropertyChanged(nameof(SendContent));
-                    OnPropertyChanged(nameof(CanClickButton));
+  
                     OnPropertyChanged(nameof(TextLength));
+                    
+                    (SendMessageCommand as RelayCommand)?.RaiseCanExecuteChanged();
                 }
             }
         }
         public int TextLength => string.IsNullOrEmpty(SendContent) ? 0 : SendContent.Length;
-        public bool CanClickButton => !string.IsNullOrEmpty(SendContent) && SendContent.Length < 255;
 
 
         //Proměná která určuje s kým momentálně uživatel komunikuje
@@ -75,14 +79,18 @@ namespace UkazkovyTest.ViewModel
             }
         }
 
-        public MainWindowModel(User acitiveUser)
+        public MainWindowModel(User acitiveUser, MessageInterface messageInterface, UserInterface userInterface)
         {
+            _messageInterface = messageInterface;
             SendContent = "";
-            Users = UserManager.GetUsers();
+            
+            _userInterface = userInterface;
+            Users = _userInterface.GetUsers();
             BtnUsers = new ObservableCollection<User>(Users);
             BtnUsers.Remove(acitiveUser);
-            Messages = MessageManager.GetMessages();
-            
+            //Messages = MessageManager.GetMessages();
+            Messages = _messageInterface.GetMessages();
+
             ActiveUser = acitiveUser;
             UpdateUserMessages();
             FiltredMessages = CollectionViewSource.GetDefaultView(UserMessages);
@@ -106,18 +114,20 @@ namespace UkazkovyTest.ViewModel
 
             ChangeReceiverCommand = new RelayCommand(ChangeReceiver, CanChangeReceiver);
 
-            MessageManager.SetReceiveTime(ActiveUser.Id, ActiveReceiver.Id);
+            //MessageManager.SetReceiveTime(ActiveUser.Id, ActiveReceiver.Id);
+            _messageInterface.SetReceiveTime(ActiveUser.Id, ActiveReceiver.Id);
         }
 
         public bool CanSendMessage(object obj)
         {
-            return true;
+            return !string.IsNullOrEmpty(SendContent) && SendContent.Length < 255;
         }
 
         //Tvorba nové zprávy a aktulizace UI
         public void SendMessage(object obj)
         {
-            MessageManager.NewMessage(SendContent, ActiveUser.Id, ActiveReceiver.Id);
+            //MessageManager.NewMessage(SendContent, ActiveUser.Id, ActiveReceiver.Id);
+            _messageInterface.NewMessage(SendContent, ActiveUser.Id, ActiveReceiver.Id);
             UpdateUserMessages();
             FiltredMessages.Refresh();
             SendContent = "";
@@ -142,7 +152,8 @@ namespace UkazkovyTest.ViewModel
                     if (parametr is int value && value == user.Id)
                     {
                         ActiveReceiver = user;
-                        MessageManager.SetReceiveTime(ActiveUser.Id, ActiveReceiver.Id);
+                        //MessageManager.SetReceiveTime(ActiveUser.Id, ActiveReceiver.Id);
+                        _messageInterface.SetReceiveTime(ActiveUser.Id, ActiveReceiver.Id);
                         UpdateUserMessages();
                         FiltredMessages.Refresh();
 

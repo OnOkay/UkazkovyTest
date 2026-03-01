@@ -22,7 +22,9 @@ namespace UkazkovyTest
         public MainWindow(User LogedUser)
         {
             InitializeComponent();
-            MainWindowModel mainWindowModel = new MainWindowModel(LogedUser);
+            MessageInterface messageInterface = new MessageManager(@"..\..\..\Model\MessageDatabase.xml");
+            UserInterface userInterface = new UserManager(@"..\..\..\Model\UserDatabase.xml");
+            MainWindowModel mainWindowModel = new MainWindowModel(LogedUser, messageInterface, userInterface);
             this.DataContext = mainWindowModel;
         }
     }

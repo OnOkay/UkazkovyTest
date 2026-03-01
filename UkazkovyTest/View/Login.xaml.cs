@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UkazkovyTest.Model;
 using UkazkovyTest.ViewModel;
 
 namespace UkazkovyTest.View
@@ -19,7 +20,9 @@ namespace UkazkovyTest.View
         public Login()
         {
             InitializeComponent();
-            LoginModel loginModel = new LoginModel();
+            UserInterface userInterface = new UserManager(@"..\..\..\Model\UserDatabase.xml");
+
+            LoginModel loginModel = new LoginModel(userInterface);
             this.DataContext = loginModel;
             if (DataContext is LoginModel lm)
             {
